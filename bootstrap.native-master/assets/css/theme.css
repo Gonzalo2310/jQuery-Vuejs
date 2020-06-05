@@ -1,0 +1,135 @@
+/* carousel */
+#myCarousel .carousel-inner > .carousel-item > .item-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+}
+#myCarousel .carousel-item {
+    height: 500px;
+    width: 100%;
+}
+.carousel-item,
+.carousel-item.active {
+  transition-timing-function: cubic-bezier(.45,.18,0,1);
+}
+@media (min-width: 768px) {
+  .carousel h1 {
+      letter-spacing: -3px;
+      font-size: 56px;
+      font-weight: bold;
+  }
+}
+
+@media (max-width: 575px) {
+  #myCarousel .container {
+    width: 100%;
+  }
+  .hidden-xs {display: none !important}
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%
+}
+
+svg.carousel-control-prev-icon,
+svg.carousel-control-next-icon {
+  fill: currentColor;
+  background: none;
+  width: 3.5rem;
+  height: auto;
+}
+
+h2 {
+  letter-spacing: -3px;
+  font-size: 56px;
+  font-weight: bold;
+}
+
+h3:not(.popover-header) {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+/* misc */
+.dropright .dropdown-menu,
+.dropleft .dropdown-menu {
+  top: -1px;
+}
+.popover .close {line-height: 0.75;}
+
+/* bg */
+.bg-bootstrap { background-color: #563d7c }
+.bg-pink { background-color: #E91E63 }
+.bg-indigo { background-color: #9c27b0 }
+
+ul.flex-column ul {
+  flex-direction: column
+}
+
+/* code */
+code {word-break: normal}
+pre[class*="language-"] {margin: 0 0 1rem}
+
+/* sidenav*/
+#nav-scrollspy {
+  position: sticky;
+  top: calc(62px + 0.5rem)
+}
+.nav-stacked ul {
+  padding-left: 1rem;
+  display: none
+}
+.nav-stacked li > a.active + ul { display: block }
+
+/* .nav-stacked li > a { background: #f6f6f6; color: #777 } */
+.nav-stacked li > a { color: #777 }
+
+.nav-stacked li + li,
+.nav-stacked li > ul { margin-top: 2px }
+
+.nav-stacked > li > a.active { background: #ccc; color: #222 }
+.nav-stacked li li > a.active { background: #ddd; color: #333 }
+.nav-stacked li li li > a.active { background: #eee; color: #444 }
+
+/* dropdown form */
+.form-vertical {
+    padding: 10px 10px 5px 10px;
+    width: 250px;
+}
+
+/* scrollspy example */
+.scrollspy-example {
+  position: relative; /* required */
+  height: 150px; overflow: auto; /* required: height must be px based, and overflow: scroll/auto */
+}
+
+.btn-icon {
+  height: 20px;
+  vertical-align: text-bottom;
+  display: inline-block;
+}
+
+.btn-lg .btn-icon {
+  height: 1.5rem;
+}
+
+/* tooltip custom-class */
+.tooltip.custom-class .tooltip-inner {
+  background: #0e3763
+}
+.bs-tooltip-top.custom-class .arrow::before {
+  border-top-color: #0e3763
+}
+.bs-tooltip-right.custom-class .arrow::before {
+  border-right-color: #0e3763
+}
+.bs-tooltip-left.custom-class .arrow::before {
+  border-left-color: #0e3763
+}
+.bs-tooltip-bottom.custom-class .arrow::before {
+  border-bottom-color: #0e3763
+}

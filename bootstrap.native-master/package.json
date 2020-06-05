@@ -1,0 +1,62 @@
+{
+  "name": "bootstrap.native",
+  "version": "3.0.5",
+  "description": "Native JavaScript for Bootstrap, the sweetest JavaScript library without jQuery.",
+  "main": "dist/bootstrap-native.min.js",
+  "module": "dist/bootstrap-native.esm.js",
+  "jsnext": "src/index.js",
+  "files" :[
+    "dist/*.{js,map}",
+    "src/*.{js,map}",
+    "src/**/*.{js,map}"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "help": "rollup --help",
+    "build": "npm-run-all --parallel build-*",
+    "custom": "rollup -c --environment",
+    "build-esm": "rollup --environment FORMAT:esm,MIN:false -c",
+    "build-esm-min": "rollup --environment FORMAT:esm,MIN:true -c",
+    "build-umd": "rollup --environment FORMAT:umd,MIN:false -c",
+    "build-umd-min": "rollup --environment FORMAT:umd,MIN:true -c",
+    "polyfill": "npm-run-all --parallel pln plnm",
+    "pln": "rollup --environment INPUTFILE:src/util/polyfill.js,OUTPUTFILE:dist/polyfill.js,FORMAT:esm,MIN:false,POLYFILL:true -c",
+    "plnm": "rollup --environment INPUTFILE:src/util/polyfill.js,OUTPUTFILE:dist/polyfill.min.js,FORMAT:esm,MIN:true,POLYFILL:true -c",
+    "watch": "rollup --environment FORMAT:umd,MIN:false -c -w"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not <= 1%",
+    "not IE 10"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thednp/bootstrap.native.git"
+  },
+  "keywords": [
+    "bootstrap.native",
+    "bootstrap",
+    "vanilla js",
+    "native javascript",
+    "vanilla javascript"
+  ],
+  "author": "dnp_theme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thednp/bootstrap.native/issues"
+  },
+  "homepage": "https://thednp.github.io/bootstrap.native/",
+  "dependencies": {
+    "shorter-js": "^0.0.5",
+    "minifill": "^0.0.7"
+  },
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-json": "^4.0.3",
+    "@rollup/plugin-node-resolve": "^7.1.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.32.1",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-terser": "^5.3.0"
+  }
+}
