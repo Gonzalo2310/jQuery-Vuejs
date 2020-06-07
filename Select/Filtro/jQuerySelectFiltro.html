@@ -14,31 +14,35 @@
   <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/offcanvas.css">
   <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/prism.css">
   <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/theme.css">
+  <style>
+    .top20 {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 <div class="container top20">
   <div class="row">
-    <div class="col-1">
-      &nbsp;
+    <div class="col-4">
+      <div><span>Elegidos</span></div>
+      <ul id="listElegidos"></ul>
     </div>
-    <div class="col-8">
+    <div class="col-4">
       <form>
         <div class="form-row align-items-center">
-          <div class="col-auto my-1">
-            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Tema principal</label>
+          <div class="form-group">
+            <label for="exampleInput">JQuery input simple</label>
+            <input type="text" class="form-control" id="exampleInput" autocomplete="off">
+            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preferencia</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-            </select>
-          </div>
-          <div class="col-auto my-1">
-            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect1">SubTema</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect1">
             </select>
           </div>
         </div>
       </form>
     </div>
-    <div class="col-1">
-      &nbsp;
+    <div class="col-4">
+      <div><span>Negados</span></div>
+      <ul id="listNegados"></ul>
     </div>
   </div>
 </div>
@@ -50,46 +54,43 @@
         integrity="sha256-CQiZw1XNLEFM6OEgZ8FR1/nTISQD7Y6i7m3beKI2BfM=" crossorigin="anonymous"></script>
 <script src="lista.js"></script>
 <script>
-  const selectPadre = jQuery('#inlineFormCustomSelect')
-  const selectHijo = jQuery('#inlineFormCustomSelect1')
-  const elementosPadre = extractElementosPadre()
-  CreateSelect(selectPadre, elementosPadre)
-  selectPadre.on('change', actualiza)
-  actualiza()
+  const origen = jQuery('#inlineFormCustomSelect')
+  const inputFiltro = jQuery('#exampleInput')
+  const listElegidos = jQuery('#listElegidos')
+  const listNegados = jQuery('#listNegados')
+  inputFiltro.on('input', actualizar)
+  actualizar()
 
-  function extractElementosPadre() {
-    let result = []
-    listaTotal.forEach(item => {
-      result.push(templateOption(item.index, item.titulo))
-    })
-    return result
+  function templateOption(item) {
+    return '<option value="' + item.index + '">' + item.titulo + '</option>'
   }
 
-  function extractElementosHijos(index) {
-    let elegido = listaTotal.find(item => item.index === index)
-    if (!elegido) {
-      return []
+  function templateUlList(item) {
+    return `<li>${item.titulo}</li>`
+  }
+
+  function templateProcessArray(items, param) {
+    let result = []
+    switch (param) {
+      case 'OPTION':
+        items.forEach(item => {
+          result.push(templateOption(item))
+        })
+        break;
+        case 'UL':
+          items.forEach(item => {
+            result.push(templateUlList(item))
+          })
+          break;
     }
-    let result = []
-    elegido.child.forEach(item => {
-      result.push(templateOption(item.index, item.titulo))
-    })
-    return result
+    return result.join('')
   }
 
-  function CreateSelect(select, element) {
-    select.empty()
-    element.forEach(item => {
-      select.append(item)
-    })
-  }
-
-  function actualiza() {
-    CreateSelect(selectHijo, extractElementosHijos(parseInt(jQuery('#inlineFormCustomSelect option:selected').val())))
-  }
-
-  function templateOption(value, texto) {
-    return '<option value="' + value + '">' + texto + '</option>'
+  function actualizar() {
+    let elegidos=listaTotal.filter(item => item.titulo.includes(inputFiltro.val()))
+    origen.empty().append(templateProcessArray(elegidos, 'OPTION'))
+    listElegidos.empty().append(templateProcessArray(elegidos, 'UL'))
+    listNegados.empty().append(templateProcessArray(listaTotal.filter(item => !item.titulo.includes(inputFiltro.val())), 'UL'))
   }
 </script>
 </body>
