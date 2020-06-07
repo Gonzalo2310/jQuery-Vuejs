@@ -24,7 +24,7 @@
       <form>
         <div class="form-group">
           <label for="exampleInputEmail1">Vuejs Input gestion error</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" :class="inputValidate" v-model="contenido" @input='firstValidation=true' aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="exampleInputEmail1" :class="classInput" v-model="contenido" @input='inputValidate' aria-describedby="emailHelp">
           <small id="emailHelp" class="form-text text-muted">Solo sera correcto si hay entre 5 y 10 caracteres</small>
           <div class="valid-feedback">
             Correcto!!
@@ -50,14 +50,11 @@
     el: '#app',
     data: {
       contenido: '',
-      firstValidation: false
+      classInput: ''
     },
-    computed: {
+    methods: {
       inputValidate() {
-        if (this.firstValidation) {
-          return this.contenido === '' || this.contenido.length < 5 || this.contenido.length > 10 ? 'is-invalid' : 'is-valid'
-        }
-        return ''
+          this.classInput =  this.contenido === '' || this.contenido.length < 5 || this.contenido.length > 10 ? 'is-invalid' : 'is-valid'
       }
     }
   })
