@@ -1,0 +1,35 @@
+.tabulacion {
+  .tab {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1px;
+    padding: 0;
+
+    li {
+      padding: 10px 20px;
+      list-style-type: none;
+      color: #000000;
+      text-align: center;
+      border-bottom: 1px solid #000000;
+
+      &.active {
+        color: #02028d;
+        border-color: #808080;
+        border-top: 1px solid #4dbec3;
+        border-left: 1px solid #4dbec3;
+        border-right: 1px solid #4dbec3;
+        border-bottom: 1px solid #ffffff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+  }
+  .content {
+    .nav-content {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
