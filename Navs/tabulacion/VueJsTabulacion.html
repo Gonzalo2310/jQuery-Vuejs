@@ -28,17 +28,17 @@
         <li class="nav-option" :class="{active: option===item}" v-for="item in ['home', 'información', 'servicios', 'contacto']" :key="item" :title="item" @click="option=item">
           {{item.charAt(0).toUpperCase() + item.slice(1)}}</li>
       </ul>
-      <div class="content">
-        <div class="nav-content" :class="{active: option==='home'}">
+      <div>
+        <div class="nav-content"  v-show="option==='home'">
           Este es el contenido de home
         </div>
-        <div class="nav-content" :class="{active: option==='información'}">
+        <div class="nav-content" v-show="option==='información'">
           Esta es la información
         </div>
-        <div class="nav-content" :class="{active: option==='servicios'}">
+        <div class="nav-content" v-show="option==='servicios'">
           Estos son los servicios
         </div>
-        <div class="nav-content" :class="{active: option==='contacto'}">
+        <div class="nav-content" v-show="option==='contacto'">
           Datos de contacto
         </div>
       </div>
