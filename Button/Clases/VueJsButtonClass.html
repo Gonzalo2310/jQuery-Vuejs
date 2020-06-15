@@ -19,10 +19,13 @@
       color:red;
       font-size: 1em;
     }
+    .top20 {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-<div class="container" id="app">
+<div class="container top20" id="app">
   <div class="row">
     <div class="col-3">
       <form>
@@ -33,9 +36,6 @@
         <div class="custom-control custom-checkbox mb-3">
           <input type="checkbox" class="custom-control-input" id="customControlValidation11" v-model="checkOutline">
           <label class="custom-control-label" for="customControlValidation11">Outline</label>
-        </div>
-        <div>
-          <span id="contenido"></span>
         </div>
       </form>
     </div>
