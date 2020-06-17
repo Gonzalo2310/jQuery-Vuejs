@@ -59,8 +59,8 @@
   const opciones = ['Nada elegido', 'Frase atribuida a John Lennon', 'Frase atribuida a Albert Einstein', 'Frase atribuida a Friedrich Nietzsche']
   const origen = jQuery('#inlineFormCustomSelect')
   const objetivo = jQuery('#selectContent')
-
   origen.on('change', actualizar)
+  actualizar()
 
   function actualizar() {
     objetivo.empty().append(opciones[parseInt(jQuery('#inlineFormCustomSelect option:selected').val())])
