@@ -59,29 +59,23 @@
 
   function extractElementosPadre() {
     let result = []
-    listaTotal.forEach(item => {
-      result.push(templateOption(item.index, item.titulo))
-    })
+    listaTotal.every(item => result.push(templateOption(item.index, item.titulo)))
     return result
   }
 
   function extractElementosHijos(index) {
-    let elegido = listaTotal.find(item => item.index === index)
+    const elegido = listaTotal.find(item => item.index === index)
     if (!elegido) {
       return []
     }
     let result = []
-    elegido.child.forEach(item => {
-      result.push(templateOption(item.index, item.titulo))
-    })
+    elegido.child.every(item => result.push(templateOption(item.index, item.titulo)))
     return result
   }
 
   function CreateSelect(select, element) {
     select.empty()
-    element.forEach(item => {
-      select.append(item)
-    })
+    element.every(item => select.append(item))
   }
 
   function actualiza() {
