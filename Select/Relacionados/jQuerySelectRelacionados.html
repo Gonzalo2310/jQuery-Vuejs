@@ -57,9 +57,9 @@
 <script>
   const selectPadre = jQuery('#inlineFormCustomSelect')
   const selectHijo = jQuery('#inlineFormCustomSelect1')
+  selectPadre.on('change', actualiza)
   const elementosPadre = extractElementosPadre()
   CreateSelect(selectPadre, elementosPadre)
-  selectPadre.on('change', actualiza)
   actualiza()
 
   function extractElementosPadre() {
@@ -80,7 +80,7 @@
 
   function CreateSelect(select, element) {
     select.empty()
-    element.every(item => select.append(item))
+    select.append(element.join(''))
   }
 
   function actualiza() {
