@@ -26,7 +26,7 @@
     <div class="col-4">
       <div><span>Elegidos</span></div>
       <ul>
-        <li v-for="elegido in listElegidos" :ref="elegido.index">{{elegido.titulo}}</li>
+        <li v-for="elegido in listElegidos" :key="elegido.index">{{elegido.titulo}}</li>
       </ul>
     </div>
     <div class="col-4">
@@ -37,7 +37,7 @@
             <input type="text" class="form-control" id="exampleInput" autocomplete="off" v-model="inputFiltro">
             <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preferencia</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-              <option v-for="elegido in listElegidos" :ref="elegido.index" :value="elegido.index">{{elegido.titulo}}
+              <option v-for="elegido in listElegidos" :key="elegido.index" :value="elegido.index">{{elegido.titulo}}
               </option>
             </select>
           </div>

@@ -61,33 +61,29 @@
   inputFiltro.on('input', actualizar)
   actualizar()
 
-  function templateOption(item) {
-    return '<option value="' + item.index + '">' + item.titulo + '</option>'
+  function templateOption({index, titulo}) {
+    return '<option value="' + index + '">' + titulo + '</option>'
   }
 
-  function templateUlList(item) {
-    return `<li>${item.titulo}</li>`
+  function templateUlList({titulo}) {
+    return `<li>${titulo}</li>`
   }
 
   function templateProcessArray(items, param) {
     let result = []
     switch (param) {
       case 'OPTION':
-        items.forEach(item => {
-          result.push(templateOption(item))
-        })
-        break;
-        case 'UL':
-          items.forEach(item => {
-            result.push(templateUlList(item))
-          })
-          break;
+        items.every(item => result.push(templateOption(item)))
+        break
+      case 'UL':
+        items.every(item => result.push(templateUlList(item)))
+        break
     }
     return result.join('')
   }
 
   function actualizar() {
-    let elegidos=listaTotal.filter(item => item.titulo.includes(inputFiltro.val()))
+    let elegidos = listaTotal.filter(item => item.titulo.includes(inputFiltro.val()))
     origen.empty().append(templateProcessArray(elegidos, 'OPTION'))
     listElegidos.empty().append(templateProcessArray(elegidos, 'UL'))
     listNegados.empty().append(templateProcessArray(listaTotal.filter(item => !item.titulo.includes(inputFiltro.val())), 'UL'))
