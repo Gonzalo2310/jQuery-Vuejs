@@ -16,11 +16,13 @@
   <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/theme.css">
   <style>
     .content {
-      padding:20px;
+      padding: 20px;
     }
+
     .top30 {
       margin-top: 30px;
     }
+
     .special-box {
       border: 1px solid #c0c0c0;
       padding: 10px;
@@ -54,7 +56,12 @@
       <form>
         <div class="form-group">
           <label for="exampleFormControlInput2">Agrege valores directamente</label>
-          <input type="text" class="form-control" id="exampleFormControlInput2">
+          <div class="input-group mb-2">
+            <input type="text" class="form-control" id="exampleFormControlInput2">
+            <div class="input-group-append">
+              <button class="btn btn-primary">Aceptar</button>
+            </div>
+          </div>
         </div>
       </form>
     </div>
@@ -62,15 +69,25 @@
       <form>
         <div class="form-group">
           <label for="exampleFormControlInput1">Agrege valores disponibles</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1">
+          <div class="input-group mb-2">
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+            <div class="input-group-append">
+              <button class="btn btn-primary">Aceptar</button>
+            </div>
+          </div>
         </div>
       </form>
     </div>
     <div class="col-4">
       <form>
         <div class="form-group">
-          <label for="exampleFormControlInput3">Agrege valores para eliminarlos</label>
-          <input type="text" class="form-control" id="exampleFormControlInput3">
+          <label for="exampleFormControlInput3">Agrege valores a la lista de eliminados</label>
+          <div class="input-group mb-2">
+            <input type="text" class="form-control" id="exampleFormControlInput3">
+            <div class="input-group-append">
+              <button class="btn btn-primary">Aceptar</button>
+            </div>
+          </div>
         </div>
       </form>
     </div>
@@ -99,29 +116,61 @@
   const initial = jQuery('#selectInitial')
   const deleted = jQuery('#listDeleted')
   const selected = jQuery('#listSelected')
+  let listElegidos = []
+  let listDeleted = []
+  updateAll()
+  initial.on('change', clickSelectToElegidos)
+  available.on('click', clickDisponibleToSelect)
+  deleted.on('click', clickDeletedToDisponible)
+  selected.on('click', clickElegidosToDeleted)
 
-  opciones.forEach((item, index) => {
-    initial.append(templateOption(index, item))
-  })
-
-  disponibles.forEach(item => {
-    available.append(templateItemGroup(item))
-  })
-
-  check_empty()
-
-  function templateOption(value, title) {
-    return '<option class="form-control" value="' + value + '">' + title + '</option>'
+  function templateOption({index, titulo}) {
+    return `<option class="form-control" value="${index}">${titulo}</option>`
   }
 
-  function templateItemGroup(title) {
-    return '<li class="list-group-item">' + title + '</li>'
+  function templateItemGroup({titulo, index}) {
+    return `<li class="list-group-item" index="${index}">${titulo}</li>`
   }
 
-  function check_empty() {
-    if (deleted.children().length === 0) {
-
+  function modeList(listOrigin, listDestiny, value) {
+    const index = parseInt(value)
+    const element = listOrigin.findIndex(item => item.index === index)
+    if (element === -1) {
+      return
     }
+    listDestiny.push(listOrigin[element])
+    listOrigin.splice(element, 1)
+  }
+
+  function clickSelectToElegidos() {
+    modeList(opciones, listElegidos, jQuery('#selectInitial option:selected').val())
+    updateAll()
+  }
+
+  function clickDisponibleToSelect(evt) {
+    modeList(disponibles, opciones, jQuery(evt.target).attr('index'))
+    updateAll()
+  }
+
+  function clickDeletedToDisponible(evt) {
+    modeList(listDeleted, disponibles, jQuery(evt.target).attr('index'))
+    updateAll()
+  }
+
+  function clickElegidosToDeleted(evt) {
+    modeList(listElegidos, listDeleted, jQuery(evt.target).attr('index'))
+    updateAll()
+  }
+
+  function updateAll() {
+    initial.empty()
+    available.empty()
+    deleted.empty()
+    selected.empty()
+    opciones.every(item => initial.append(templateOption(item)))
+    disponibles.every(item => available.append(templateItemGroup(item)))
+    listElegidos.every(item => selected.append(templateItemGroup(item)))
+    listDeleted.every(item => deleted.append(templateItemGroup(item)))
   }
 
 </script>
