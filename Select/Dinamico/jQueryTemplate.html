@@ -33,12 +33,10 @@
 <div class="content">
   <div class="row">
     <div class="col-4">
-      <form>
-        <div class="form-group">
-          <label for="selectInitial">Example select</label>
-          <select class="form-control" id="selectInitial"></select>
-        </div>
-      </form>
+      <div class="form-group">
+        <label for="selectInitial">Example select</label>
+        <select class="form-control" id="selectInitial"></select>
+      </div>
     </div>
     <div class="col-4">
       <span>Disponibles</span>
@@ -53,54 +51,42 @@
   </div>
   <div class="row top30 special-box">
     <div class="col-4">
-      <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput2">Agrege valores directamente</label>
-          <div class="input-group mb-2">
-            <input type="text" class="form-control" id="exampleFormControlInput2">
-            <div class="input-group-append">
-              <button class="btn btn-primary">Aceptar</button>
-            </div>
+      <div class="form-group">
+        <label for="fieldSelect">Agrege valores directamente</label>
+        <div class="input-group mb-2">
+          <input type="text" class="form-control" id="fieldSelect">
+          <div class="input-group-append">
+            <button class="btn btn-primary" id="addSelect">Aceptar</button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
     <div class="col-4">
-      <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Agrege valores disponibles</label>
-          <div class="input-group mb-2">
-            <input type="text" class="form-control" id="exampleFormControlInput1">
-            <div class="input-group-append">
-              <button class="btn btn-primary">Aceptar</button>
-            </div>
+      <div class="form-group">
+        <label for="fieldAvailable">Agrege valores disponibles</label>
+        <div class="input-group mb-2">
+          <input type="text" class="form-control" id="fieldAvailable">
+          <div class="input-group-append">
+            <button class="btn btn-primary" id="addAvailable">Aceptar</button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
     <div class="col-4">
-      <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput3">Agrege valores a la lista de eliminados</label>
-          <div class="input-group mb-2">
-            <input type="text" class="form-control" id="exampleFormControlInput3">
-            <div class="input-group-append">
-              <button class="btn btn-primary">Aceptar</button>
-            </div>
-          </div>
+      <div class="form-group">
+        <label for="fieldDeleted">Agrege valores a la lista de eliminados</label>
+        <div class="input-group mb-2">
+          <input type="text" class="form-control" id="fieldDeleted">
+          <button class="btn btn-primary" id="addDeleted">Aceptar</button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-4">
-      <form>
-        <div class="col-4">
-          <span>Elegidos</span>
-          <ul class="list-group" id="listSelected">
-          </ul>
-        </div>
-      </form>
+        <span>Elegidos</span>
+        <ul class="list-group" id="listSelected">
+        </ul>
     </div>
   </div>
 </div>
@@ -116,13 +102,54 @@
   const initial = jQuery('#selectInitial')
   const deleted = jQuery('#listDeleted')
   const selected = jQuery('#listSelected')
+  const addButtonAvailable = jQuery('#addAvailable')
+  const addButtonDeleted = jQuery('#addDeleted')
+  const addButtonSelect = jQuery('#addSelect')
+
   let listElegidos = []
   let listDeleted = []
+
+  addButtonAvailable.click(function () {
+    addGeneral('Available')
+  })
+  addButtonDeleted.click(function () {
+    addGeneral('Deleted')
+  })
+  addButtonSelect.click(function () {
+    addGeneral('Select')
+  })
+
   updateAll()
   initial.on('change', clickSelectToElegidos)
   available.on('click', clickDisponibleToSelect)
   deleted.on('click', clickDeletedToDisponible)
   selected.on('click', clickElegidosToDeleted)
+
+  function addGeneral(type) {
+    console.log(type)
+    const origen = jQuery('#field' + type)
+    if (!type || !origen.val()) {
+      return
+    }
+    console.log('#field' + type)
+    const element = {
+      titulo: origen.val(),
+      index: findIndexMax()
+    }
+    origen.val('')
+    switch (type) {
+      case 'Select':
+        opciones.push(element)
+        break
+      case 'Deleted':
+        listDeleted.push(element)
+        break
+      case 'Available':
+        disponibles.push(element)
+        break
+    }
+    updateAll()
+  }
 
   function templateOption({index, titulo}) {
     return `<option class="form-control" value="${index}">${titulo}</option>`
@@ -140,6 +167,18 @@
     }
     listDestiny.push(listOrigin[element])
     listOrigin.splice(element, 1)
+  }
+
+  function findIndexMax() {
+    let index = 0
+    let lista = opciones.concat(disponibles, listElegidos, listDeleted)
+    console.log(lista)
+    lista.forEach(item => {
+      if (item.index > index) {
+        index = item.index
+      }
+    })
+    return ++index
   }
 
   function clickSelectToElegidos() {
@@ -172,6 +211,7 @@
     listElegidos.every(item => selected.append(templateItemGroup(item)))
     listDeleted.every(item => deleted.append(templateItemGroup(item)))
   }
+
 
 </script>
 </body>
