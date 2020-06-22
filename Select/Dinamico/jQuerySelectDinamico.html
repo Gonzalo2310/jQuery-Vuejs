@@ -126,12 +126,10 @@
   selected.on('click', clickElegidosToDeleted)
 
   function addGeneral(type) {
-    console.log(type)
     const origen = jQuery('#field' + type)
     if (!type || !origen.val()) {
       return
     }
-    console.log('#field' + type)
     const element = {
       titulo: origen.val(),
       index: findIndexMax()
@@ -172,7 +170,6 @@
   function findIndexMax() {
     let index = 0
     let lista = opciones.concat(disponibles, listElegidos, listDeleted)
-    console.log(lista)
     lista.forEach(item => {
       if (item.index > index) {
         index = item.index
