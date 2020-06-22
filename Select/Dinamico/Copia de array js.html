@@ -6,13 +6,30 @@
 </head>
 <body>
 <script>
-  let lista = [1,2,3,4,5]
-  let copia = lista
+  let var1 =0
+  let var2 = var1
 
-  copia.push(9)
+  var2++
 
-  console.log('copia', copia)
-  console.log('lista', lista)
+  console.log(var1, var2)
+
+  let listado = [1,2,3,4,5]
+  let listado2 = listado
+
+  listado2.push(6)
+
+  console.log(listado)
+  console.log(listado2)
+
+  let opciones = [1,2,3]
+
+  function changeArray(info) {
+    info.push(99)
+  }
+
+  changeArray(opciones)
+
+  console.log(opciones)
 </script>
 </body>
 </html>
