@@ -3,22 +3,221 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="The faster, lighter and more secure version of the Bootstrap JavaScript components.">
+  <meta name="description"
+        content="The faster, lighter and more secure version of the Bootstrap JavaScript components.">
   <meta name="keywords" content="JavaScript,Native JavaScript,native,Bootstrap,plugins,jQuery">
   <meta name="author" content="thednp">
-  <link rel="shortcut icon" href="../bootstrap.native-master/assets/img/favicon.ico">
-  <link rel="apple-touch-icon" href="../bootstrap.native-master/assets/img/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../../bootstrap.native-master/assets/img/favicon.ico">
+  <link rel="apple-touch-icon" href="../../bootstrap.native-master/assets/img/apple-touch-icon.png">
   <title>jQuery Template</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../bootstrap.native-master/assets/css/offcanvas.css">
-  <link rel="stylesheet" href="../bootstrap.native-master/assets/css/prism.css">
-  <link rel="stylesheet" href="../bootstrap.native-master/assets/css/theme.css">
+  <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/offcanvas.css">
+  <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/prism.css">
+  <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/theme.css">
+  <link rel="stylesheet" href="./estilo.css">
 </head>
 <body>
+<div class="top20 content contenedor">
+  <div class="row">
+    <div class="col-12">
+      <ul class="list-group" id="tablaExcel">
+      </ul>
+    </div>
+    <div class="col-12">
+      <div class="form-group controlExcel">
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="formActive">
+          <label class="form-check-label" for="formActive">¿Activo?</label>
+        </div>
+        <div class="input-group mb-2">
+          <label class="form-check-label" for="formTitle">Titulo&nbsp;</label>
+          <input type="text" class="form-control" id="formTitle">
+          <div class="invalid-feedback">
+            Se necesita el titulo
+          </div>
+        </div>
+        <div class="input-group mb-2">
+          <label class="form-check-label" for="formPrice">Precio&nbsp;</label>
+          <input type="number" min="0" class="form-control" id="formPrice">
+          <div class="invalid-feedback">
+            Se necesita el precio
+          </div>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="formMonth">
+          <label class="form-check-label" for="formMonth">¿Mensual?</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 contenedor">
+      <button type="button" class="btn btn-primary" id="formAction">Agregar</button>
+    </div>
+  </div>
+</div>
 <script
     src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap.native@3.0.5/dist/bootstrap-native.min.js" integrity="sha256-CQiZw1XNLEFM6OEgZ8FR1/nTISQD7Y6i7m3beKI2BfM=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap.native@3.0.5/dist/bootstrap-native.min.js"
+        integrity="sha256-CQiZw1XNLEFM6OEgZ8FR1/nTISQD7Y6i7m3beKI2BfM=" crossorigin="anonymous"></script>
+<script>
+  const productos = [
+    {
+      activo: true,
+      titulo: 'Luz',
+      precio: 30,
+      mensual: true,
+      index: 1
+    },
+    {
+      activo: true,
+      titulo: 'Cafe',
+      precio: 1.5,
+      mensual: false,
+      index: 2
+    }
+  ]
+  /*** Controles para agregar datos ****/
+  const formAction = jQuery('#formAction')
+  const formTitle = jQuery('#formTitle')
+  const formPrice = jQuery('#formPrice')
+  const formMonth = jQuery('#formMonth')
+  const formActive = jQuery('#formActive')
+
+  formAction.on('click', validate)
+  formTitle.on('input', function() {
+    formTitle.removeClass('is-invalid')
+  })
+  formPrice.on('input', function() {
+    formPrice.removeClass('is-invalid')
+  })
+  /************************************/
+  const tabla = jQuery('#tablaExcel')
+  actualizar()
+
+
+  function templateColumn(cadena) {
+    return `<li>${cadena}</li>`
+  }
+
+  function templateCabecera(title1, title2, title3, title4, title5, title6) {
+    let response = `<div class="columnExcel head">`
+    response += `<div>${title1}</div>`
+    response += `<div>${title2}</div>`
+    response += `<div>${title3}</div>`
+    response += `<div>${title4}</div>`
+    response += `<div>${title5}</div>`
+    response += `<div>${title6}</div>`
+    response += `</div>`
+    return response
+  }
+
+  function templatePie(title, total) {
+    let response = `<div class="columnExcel footer">`
+    response += '<div>&nbsp;</div>'
+    response += '<div>&nbsp;</div>'
+    response += `<div>${title}</div>`
+    response += `<div>&nbsp;</div>`
+    response += `<div>${total}</div>`
+    response += `<div>&nbsp;</div>`
+    response += `</div>`
+    return response
+  }
+
+  function templateBody({activo, titulo, precio, index, total, mensual}) {
+    let response = `<div class="columnExcel body">`
+    response += `<div>${activo}</div>`
+    response += `<div>${index}</div>`
+    response += `<div>${titulo}</div>`
+    response += `<div>${precio}</div>`
+    response += `<div>${total}</div>`
+    response += `<div>${mensual}</div>`
+    response += `</div>`
+    return response
+  }
+
+  function calcItem(item) {
+    return {
+      activo: item.activo ? 'Si' : 'No',
+      index: item.index,
+      precio: item.precio,
+      titulo: item.titulo,
+      total: item.activo ? item.mensual ? item.precio : parseFloat(item.precio) * 30 : 0,
+      mensual: item.mensual ? 'Si' : 'No'
+    }
+  }
+
+  function calcTotal() {
+    let total = 0
+    productos.forEach(item => {
+      if (item.activo) {
+        total += item.mensual ? parseFloat(item.precio) : parseFloat(item.precio) * 30
+      }
+    })
+    return total
+  }
+
+  function actualizar() {
+    tabla.empty()
+    tabla.append(templateColumn(templateCabecera('¿Activo?', 'Indice', 'Titulo', 'Precio', 'Calculo', '¿Mensual?')))
+    productos.every(item => tabla.append(templateColumn(templateBody(calcItem(item)))))
+    tabla.append(templateColumn(templatePie('Total: ', calcTotal())))
+
+  }
+
+  function findIndex () {
+    let index = 0
+    productos.forEach(item => {
+      if (item.index > index) {
+        index = item.index
+      }
+    })
+    return ++index
+  }
+  function validate() {
+    let out = false
+    if (!formTitle.val()) {
+      formTitle.addClass('is-invalid')
+      out = true
+    }
+    if (!formPrice.val()) {
+      formPrice.addClass('is-invalid')
+      out = true
+    }
+    if (out) {
+      return
+    }
+    productos.push({
+      activo: formActive.prop('checked'),
+      titulo: formTitle.val(),
+      precio: parseFloat(formPrice.val()),
+      mensual: formMonth.prop('checked'),
+      index: findIndex()
+    })
+    formActive.prop('checked', false)
+    formMonth.prop('checked', false)
+    formTitle.val('')
+    formPrice.val('')
+    actualizar()
+  }
+
+  function changeActive(index) {
+    const result = productos.findIndex(item => item.index === index)
+    if (result < 0) {
+      return
+    }
+    productos[result].activo = !productos[result].activo
+    actualizar()
+  }
+
+  function changeMonth(index) {
+    const result = productos.findIndex(item => item.index === index)
+    if (result < 0) {
+      return
+    }
+    productos[result].mensual = !productos[result].mensual
+    actualizar()
+  }
+</script>
 </body>
 </html>

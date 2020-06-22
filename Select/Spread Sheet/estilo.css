@@ -1,0 +1,42 @@
+.top20 {
+  margin-top: 20px;
+}
+
+.columnExcel {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.columnExcel.head {
+  border-bottom: 1px solid #000000;
+  text-align: center;
+}
+.columnExcel.body {
+  border-bottom: 1px solid #000000;
+  text-align: center;
+  padding: 10px;
+  background-color: #e9ecef;
+}
+
+.controlExcel {
+  display: grid;
+  grid-template-columns: 120px 1fr 120px 120px;
+  grid-column-gap: 15px;
+  padding: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  border: 1px solid #000000;
+}
+
+.contenedor {
+  margin-left: 10px;
+  text-align: center;
+}
+
+.footer {
+  padding: 10px;
+  border: 1px solid #4dbec3;
+  border-top: none;
+}
+
+/*# sourceMappingURL=estilo.css.map */

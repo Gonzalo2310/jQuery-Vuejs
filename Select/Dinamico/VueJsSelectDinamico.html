@@ -35,18 +35,18 @@
     <div class="col-4">
       <div class="form-group">
         <label for="selectInitial">Example select</label>
-        <select class="form-control" id="selectInitial"></select>
+        <select class="form-control" id="selectInitial" v-model="selectElement" @click="clickSelectToElegidos">
+          <option v-for="item in listOpciones" :key="item.index" :value="item.index">{{item.titulo}}</option>
+        </select>
       </div>
     </div>
     <div class="col-4">
       <span>Disponibles</span>
-      <ul class="list-group" id="listAvailable">
-      </ul>
+      <view-lista :list-content="listDisponibles" @update="clickDisponibleToSelect"></view-lista>
     </div>
     <div class="col-4">
       <span>Eliminados</span>
-      <ul class="list-group" id="listDeleted">
-      </ul>
+      <view-lista :list-content="listDeleted" @update="clickDeletedToDisponible"></view-lista>
     </div>
   </div>
   <div class="row top30 special-box">
@@ -54,9 +54,9 @@
       <div class="form-group">
         <label for="fieldSelect">Agrege valores directamente</label>
         <div class="input-group mb-2">
-          <input type="text" class="form-control" id="fieldSelect">
+          <input type="text" class="form-control" id="fieldSelect" v-model="inputSelect">
           <div class="input-group-append">
-            <button class="btn btn-primary" id="addSelect">Aceptar</button>
+            <button class="btn btn-primary" id="addSelect" @click="addButtonSelect()">Aceptar</button>
           </div>
         </div>
       </div>
@@ -65,9 +65,9 @@
       <div class="form-group">
         <label for="fieldAvailable">Agrege valores disponibles</label>
         <div class="input-group mb-2">
-          <input type="text" class="form-control" id="fieldAvailable">
+          <input type="text" class="form-control" id="fieldAvailable" v-model="inputAvailable">
           <div class="input-group-append">
-            <button class="btn btn-primary" id="addAvailable">Aceptar</button>
+            <button class="btn btn-primary" id="addAvailable" @click="addButtonAvailable()">Aceptar</button>
           </div>
         </div>
       </div>
@@ -76,8 +76,8 @@
       <div class="form-group">
         <label for="fieldDeleted">Agrege valores a la lista de eliminados</label>
         <div class="input-group mb-2">
-          <input type="text" class="form-control" id="fieldDeleted">
-          <button class="btn btn-primary" id="addDeleted">Aceptar</button>
+          <input type="text" class="form-control" id="fieldDeleted" v-model="inputDeleted">
+          <button class="btn btn-primary" @click="addButtonDeleted()">Aceptar</button>
         </div>
       </div>
     </div>
@@ -85,8 +85,7 @@
   <div class="row">
     <div class="col-4">
       <span>Elegidos</span>
-      <ul class="list-group" id="listSelected">
-      </ul>
+      <view-lista :list-content="listElegidos" @update="clickElegidosToDeleted"></view-lista>
     </div>
   </div>
 </div>
@@ -99,9 +98,10 @@
   new Vue({
     el: '#app',
     data: {
+      selectElement: opciones[0].index,
       listDisponibles: disponibles,
       listOpciones: opciones,
-      listAvailables: [],
+      listElegidos: [],
       listDeleted: [],
       inputSelect: '',
       inputDeleted: '',
@@ -151,26 +151,29 @@
             this.inputAvailable = ''
             break
         }
+      },
+      clickSelectToElegidos() {
+        this.modeList(this.listOpciones, this.listElegidos, parseInt(this.selectElement))
+        this.selectElement = this.listOpciones[0].index
+      },
+      clickDisponibleToSelect({index}) {
+        this.modeList(this.listDisponibles, this.listOpciones, index)
+      },
+      clickDeletedToDisponible({index}) {
+        this.modeList(this.listDeleted, this.listDisponibles, index)
+      },
+      clickElegidosToDeleted({index}) {
+        this.modeList(this.listElegidos, this.listDeleted, index)
+      },
+      addButtonAvailable () {
+        this.addGeneral('Available')
+      },
+      addButtonDeleted() {
+        this.addGeneral('Deleted')
+      },
+      addButtonSelect() {
+        this.addGeneral('Select')
       }
-      clickSelectToElegidos({index}) {
-    modeList(opciones, listElegidos, index)
-    updateAll()
-  },
-
-  clickDisponibleToSelect(evt) {
-    modeList(disponibles, opciones, jQuery(evt.target).attr('index'))
-    updateAll()
-  },
-
-  clickDeletedToDisponible(evt) {
-    modeList(listDeleted, disponibles, jQuery(evt.target).attr('index'))
-    updateAll()
-  },
-
-  clickElegidosToDeleted(evt) {
-    modeList(listElegidos, listDeleted, jQuery(evt.target).attr('index'))
-    updateAll()
-  }
     }
   })
 </script>

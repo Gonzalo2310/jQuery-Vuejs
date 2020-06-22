@@ -5,7 +5,7 @@ Vue.component('view-lista', {
       require: true,
     }
   },
-  template: `<ul class="list-group" id="listSelected">
-<option v-for="item in listContent" :key="item.index" @click="$emit('update', item)">{{item.titulo}}</option>
-</ul>`
+  template: `<ul class="list-group">
+                <option v-for="item in listContent" :key="item.index" @click="$emit('update', item)">{{item.titulo}}</option>
+             </ul>`
 })
