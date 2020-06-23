@@ -21,6 +21,28 @@
   <div class="row">
     <div class="col-12">
       <ul class="list-group" id="tablaExcel">
+        <li>
+          <div class="columnExcel head">
+            <div>¿Activo?</div>
+            <div>Indice</div>
+            <div>Titulo</div>
+            <div>Precio</div>
+            <div>Calculo</div>
+            <div>¿Mensual?</div>
+          </div>
+        </li>
+        <li id="tablaBody">
+        </li>
+        <li>
+          <div class="columnExcel footer">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>Total:</div>
+            <div>&nbsp;</div>
+            <div id="bodyTotal">0</div>
+            <div>&nbsp;</div>
+          </div>
+        </li>
       </ul>
     </div>
     <div class="col-12">
@@ -85,44 +107,17 @@
   const formActive = jQuery('#formActive')
 
   formAction.on('click', validate)
-  formTitle.on('input', function() {
+  formTitle.on('input', function () {
     formTitle.removeClass('is-invalid')
   })
-  formPrice.on('input', function() {
+  formPrice.on('input', function () {
     formPrice.removeClass('is-invalid')
   })
   /************************************/
-  const tabla = jQuery('#tablaExcel')
+  const tabla = jQuery('#tablaBody')
+  const tablaTotal = jQuery('#bodyTotal')
   actualizar()
 
-
-  function templateColumn(cadena) {
-    return `<li>${cadena}</li>`
-  }
-
-  function templateCabecera(title1, title2, title3, title4, title5, title6) {
-    let response = `<div class="columnExcel head">`
-    response += `<div>${title1}</div>`
-    response += `<div>${title2}</div>`
-    response += `<div>${title3}</div>`
-    response += `<div>${title4}</div>`
-    response += `<div>${title5}</div>`
-    response += `<div>${title6}</div>`
-    response += `</div>`
-    return response
-  }
-
-  function templatePie(title, total) {
-    let response = `<div class="columnExcel footer">`
-    response += '<div>&nbsp;</div>'
-    response += '<div>&nbsp;</div>'
-    response += `<div>${title}</div>`
-    response += `<div>&nbsp;</div>`
-    response += `<div>${total}</div>`
-    response += `<div>&nbsp;</div>`
-    response += `</div>`
-    return response
-  }
 
   function templateBody({activo, titulo, precio, index, total, mensual}) {
     let response = `<div class="columnExcel body">`
@@ -140,7 +135,7 @@
     return {
       activo: item.activo ? 'Si' : 'No',
       index: item.index,
-      precio: item.precio,
+      precio: item.precio ? item.precio : 0,
       titulo: item.titulo,
       total: item.activo ? item.mensual ? item.precio : parseFloat(item.precio) * 30 : 0,
       mensual: item.mensual ? 'Si' : 'No'
@@ -150,7 +145,7 @@
   function calcTotal() {
     let total = 0
     productos.forEach(item => {
-      if (item.activo) {
+      if (item.activo && item.precio) {
         total += item.mensual ? parseFloat(item.precio) : parseFloat(item.precio) * 30
       }
     })
@@ -159,13 +154,12 @@
 
   function actualizar() {
     tabla.empty()
-    tabla.append(templateColumn(templateCabecera('¿Activo?', 'Indice', 'Titulo', 'Precio', 'Calculo', '¿Mensual?')))
-    productos.every(item => tabla.append(templateColumn(templateBody(calcItem(item)))))
-    tabla.append(templateColumn(templatePie('Total: ', calcTotal())))
-
+    tablaTotal.empty()
+    productos.every(item => tabla.append(templateBody(calcItem(item))))
+    tablaTotal.append(calcTotal())
   }
 
-  function findIndex () {
+  function findIndex() {
     let index = 0
     productos.forEach(item => {
       if (item.index > index) {
@@ -174,6 +168,7 @@
     })
     return ++index
   }
+
   function validate() {
     let out = false
     if (!formTitle.val()) {
@@ -224,7 +219,7 @@
     if (result < 0) {
       return
     }
-    productos[result].precio = parseFloat(jQuery('#inputPrice' + index).val())
+    productos[result].precio = parseFloat(jQuery('#inputPrice' + index).val() ? jQuery('#inputPrice' + index).val() : 0)
     actualizar()
   }
 </script>
