@@ -34,12 +34,10 @@ Vue.component('gallery', {
     mover_left() {
       this.direccion = 1
       this.retro = true
-      const me = this
     },
     mover_der() {
       this.direccion = 2
       this.move=true
-      const me = this
     },
     animationEnd() {
       const me = this
