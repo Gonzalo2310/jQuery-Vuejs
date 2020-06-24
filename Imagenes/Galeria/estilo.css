@@ -1,0 +1,55 @@
+.image {
+  width: 100%;
+}
+
+.grilla {
+  display: grid;
+  grid-template-columns: 15% 1fr 15%;
+}
+
+.content-image {
+  display: grid;
+  grid-template-columns: 100% 100% 100%;
+  overflow: hidden;
+  border: 3px solid #000;
+  box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+@keyframes slideout {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+.move {
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.retromove {
+  animation-name: slideout;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.sombra {
+  border: 3px solid #000;
+  box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
+}
+
+div.image {
+  transform: translateX(-100%);
+}
+
+/*# sourceMappingURL=estilo.css.map */

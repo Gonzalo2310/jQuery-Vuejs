@@ -14,67 +14,10 @@
   <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/offcanvas.css">
   <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/prism.css">
   <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/theme.css">
+  <link rel="stylesheet" href="estilo.css">
   <style>
     .top20 {
       margin-top: 20px;
-    }
-
-    .image {
-      width: 100%;
-    }
-
-    .grilla {
-      display: grid;
-      grid-template-columns: 15% 1fr 15%;
-    }
-
-    .content-image {
-      display: grid;
-      grid-template-columns: 100% 100% 100%;
-      overflow: hidden;
-      border: 3px solid #000;
-      box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
-    }
-
-    @keyframes slidein {
-      from {
-        transform: translateX(-100%);
-      }
-
-      to {
-        transform: translateX(-200%);
-      }
-    }
-
-    @keyframes slideout {
-      from {
-        transform: translateX(-100%);
-      }
-
-      to {
-        transform: translateX(0%);
-      }
-    }
-
-    .move {
-      animation-name: slidein;
-      animation-duration: 1s;
-      animation-fill-mode: forwards;
-    }
-
-    .retromove {
-      animation-name: slideout;
-      animation-duration: 1s;
-      animation-fill-mode: forwards;
-    }
-
-    .sombra {
-      border: 3px solid #000;
-      box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
-    }
-
-    #imagen1, #imagen2, #imagen3 {
-      transform: translateX(-100%);
     }
   </style>
 </head>
@@ -90,7 +33,7 @@
           <img src="" alt="..." class="image" id="imagen_screen1">
         </div>
         <div class="image" id="imagen2">
-          <img src="" alt="..." class="image" id="imagen_screen2">
+          <img src="" alt="..." class="image" id="imagen_screen2" onchange="loadImage">
         </div>
         <div class="image" id="imagen3">
           <img src="" alt="..." class="image" id="imagen_screen3">
@@ -192,6 +135,10 @@
       button_der.attr('disabled', true)
     }
     direccion = 0
+  }
+
+  function loadImage() {
+    console.log('termino de cargar la imagen')
   }
 </script>
 </body>
