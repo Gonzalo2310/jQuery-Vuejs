@@ -126,7 +126,7 @@
       modalShow: false,
       modalHide: false
     },
-    mounted () {
+    created () {
       this.pagination.limit = Math.abs(information.length / this.pagination.views)
       if (information.length !== (this.pagination.limit * this.pagination.views)) {
         ++this.pagination.limit
@@ -160,7 +160,7 @@
         let start = this.pagination.current > 1 ? this.pagination.current - 1 : this.pagination.current
         let end = this.pagination.current + this.pagination.counter
         if (end > this.pagination.limit) {
-          end = this.pagination.limit
+          end = this.pagination.limit +1
         }
         return {start: start > 1 ? start -1 : 0, end, diff: end === this.pagination.limit ? (end-start) +1 : end-start}
       }

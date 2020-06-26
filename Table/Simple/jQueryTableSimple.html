@@ -93,7 +93,7 @@
     let start = pagination.current >1 ? ((pagination.current -1) * pagination.views  ): 0
     let end = start + pagination.views
     if (end > pagination.total) {
-      end = pagination.total
+      end = pagination.total +1
     }
     for (let i = start; i < end; i++) {
       let item = information[i]
