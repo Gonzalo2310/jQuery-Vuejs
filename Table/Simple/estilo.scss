@@ -14,14 +14,14 @@
 
   to {
     opacity: 1;
-    padding: 20%;
+    padding: 5%;
   }
 }
 
 @keyframes ocultarModal {
   from {
     opacity: 1;
-    padding: 20%;
+    padding: 5%;
   }
 
   to {
@@ -47,3 +47,7 @@
   animation-duration: .3s;
   animation-fill-mode: forwards;
 }
+ .min-item {
+   min-width: 52px;
+   text-align: center;
+ }

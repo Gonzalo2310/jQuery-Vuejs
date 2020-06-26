@@ -3,19 +3,169 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="The faster, lighter and more secure version of the Bootstrap JavaScript components.">
+  <meta name="description"
+        content="The faster, lighter and more secure version of the Bootstrap JavaScript components.">
   <meta name="keywords" content="JavaScript,Native JavaScript,native,Bootstrap,plugins,jQuery">
   <meta name="author" content="thednp">
-  <link rel="shortcut icon" href="../bootstrap.native-master/assets/img/favicon.ico">
-  <link rel="apple-touch-icon" href="../bootstrap.native-master/assets/img/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../../bootstrap.native-master/assets/img/favicon.ico">
+  <link rel="apple-touch-icon" href="../../bootstrap.native-master/assets/img/apple-touch-icon.png">
   <title>VueJS Template</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../bootstrap.native-master/assets/css/offcanvas.css">
-  <link rel="stylesheet" href="../bootstrap.native-master/assets/css/prism.css">
-  <link rel="stylesheet" href="../bootstrap.native-master/assets/css/theme.css">
+  <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/offcanvas.css">
+  <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/prism.css">
+  <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/theme.css">
+  <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+<div class="container top20" id="app">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped" id="centralTable">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Compañía</th>
+          <th scope="col">Ver</th>
+        </tr>
+        </thead>
+        <tbody id="dataTable">
+        <tr v-for="item in tableData" :key="item.index">
+          <td>{{item.id}}</td>
+          <td>{{item.first_name}}</td>
+          <td>{{item.last_name}}</td>
+          <td>{{item.company}}</td>
+          <td>
+            <button @click="expand(item)" class="pointer" type="button" data-toggle="modal" data-target="#dataModal"
+                    v-html="iconEye"></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <nav aria-label="...">
+        <ul class="pagination" id="pagination">
+          <li class="page-item" :class="{disabled: pagination.current === 1}">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true"  @click="pagination.current--">Previo</a>
+          </li>
+          <li class="page-item min-item"
+              @click = "pagination.current = item + paginationView.start"
+              :class="{active: (item+paginationView.start)===pagination.current}"
+              :aria-current="(item+paginationView.start)===pagination.current ? 'page' : ''"
+              v-for="(item) in paginationView.diff" :key="item">
+            <a class="page-link" href="#" >{{item + paginationView.start}}<span
+                :class="{'sr-only': (item+paginationView.start)===pagination.current}">
+              {{(item+paginationView.start)===pagination.current ? '(current)' : ''}}</span></a>
+          </li>
+          <li class="page-item " :class="{disabled: (pagination.current * pagination.views) >= pagination.total}">
+            <a class="page-link" href="#" @click="pagination.current++">Proximo</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="modal fade" tabindex="-1" role="dialog" id="dataModal" :class="{showModal: modalShow, hideModal: modalHide}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Información del usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="closeModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="dataModalBody" >
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img :src="userSelect.avatar.replace('50x50', '150x150')" class="card-img-top" :alt="'avatar del usuario: ' + userSelect.first_name">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{userSelect.first_name}} {{userSelect.last_name}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Compañía: {{userSelect.company}}</li>
+                  <li class="list-group-item">Email: {{userSelect.email}}</li>
+                  <li class="list-group-item">Idioma: {{userSelect.language}}</li>
+                  <li class="list-group-item">Telefono: {{userSelect.phone}}</li>
+                  <li class="list-group-item">Animal: {{userSelect.animal}}</li>
+                  <li class="list-group-item">Color: {{userSelect.color}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="closeModal()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap.native@3.0.5/dist/bootstrap-native.min.js" integrity="sha256-CQiZw1XNLEFM6OEgZ8FR1/nTISQD7Y6i7m3beKI2BfM=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap.native@3.0.5/dist/bootstrap-native.min.js"
+        integrity="sha256-CQiZw1XNLEFM6OEgZ8FR1/nTISQD7Y6i7m3beKI2BfM=" crossorigin="anonymous"></script>
+<script src="centerData.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      pagination: {
+        current: 1,
+        views: 10,
+        counter: 5,
+        total: information.length
+      },
+      iconEye: '<svg class="bi bi-eye-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\n' +
+        '                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>\n' +
+        '                <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>\n' +
+        '              </svg>',
+      userSelect: {
+        avatar: ' '
+      },
+      modalShow: false,
+      modalHide: false
+    },
+    mounted () {
+      this.pagination.limit = Math.abs(information.length / this.pagination.views)
+      if (information.length !== (this.pagination.limit * this.pagination.views)) {
+        ++this.pagination.limit
+      }
+    },
+    methods: {
+      expand(item) {
+        this.userSelect = item
+        this.modalShow = true
+      },
+      closeModal() {
+        this.modalHide = true
+        this.modalShow = false
+        const me = this
+        setTimeout(function () {
+          me.modalHide = false
+        }, 400)
+      }
+    },
+    computed: {
+      tableData() {
+        let result = Array.from(information)
+        let start = this.pagination.current > 1 ? ((this.pagination.current - 1) * this.pagination.views) : 0
+        let end = start + this.pagination.views
+        if (end > this.pagination.total) {
+          end = this.pagination.total
+        }
+        return result.splice(start, end-start)
+      },
+      paginationView() {
+        let start = this.pagination.current > 1 ? this.pagination.current - 1 : this.pagination.current
+        let end = this.pagination.current + this.pagination.counter
+        if (end > this.pagination.limit) {
+          end = this.pagination.limit
+        }
+        return {start: start > 1 ? start -1 : 0, end, diff: end === this.pagination.limit ? (end-start) +1 : end-start}
+      }
+    }
+  })
+</script>
 </body>
 </html>

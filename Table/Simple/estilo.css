@@ -13,13 +13,13 @@
   }
   to {
     opacity: 1;
-    padding: 20%;
+    padding: 5%;
   }
 }
 @keyframes ocultarModal {
   from {
     opacity: 1;
-    padding: 20%;
+    padding: 5%;
   }
   to {
     opacity: 0;
@@ -42,6 +42,11 @@
   animation-name: ocultarModal;
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
+}
+
+.min-item {
+  min-width: 52px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=estilo.css.map */

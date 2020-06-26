@@ -102,8 +102,8 @@
           <td>${item.id}</td>
           <td>${item.first_name}</td>
           <td>${item.last_name}</td>
-          <td>${item.company}r</td>
-          <td><button onclick="expand(${item.id})" class="pointer" class="pointer" type="button" data-toggle="modal" data-target="#dataModal">${iconEye}</button></td>
+          <td>${item.company}</td>
+          <td><button onclick="expand(${item.id})" class="pointer" type="button" data-toggle="modal" data-target="#dataModal">${iconEye}</button></td>
         </tr>`
       )
     }
@@ -158,13 +158,13 @@
     for (let i = start; i < (end + 1); i++) {
       if (i === pagination.current) {
         result.push(
-          `<li class="page-item active" aria-current="page">
+          `<li class="page-item active min-item" aria-current="page">
              <a class="page-link" href="#">${i}<span class="sr-only">(current)</span></a>
           </li>`
         )
       } else {
         result.push(
-          `<li class="page-item" onclick="paginationClick(${i})"><a class="page-link" href="#" >${i}</a></li>`
+          `<li class="page-item min-item" onclick="paginationClick(${i})"><a class="page-link" href="#" >${i}</a></li>`
         )
       }
 
