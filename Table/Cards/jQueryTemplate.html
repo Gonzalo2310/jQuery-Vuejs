@@ -14,19 +14,26 @@
   <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/offcanvas.css">
   <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/prism.css">
   <link rel="stylesheet" href="../../bootstrap.native-master/assets/css/theme.css">
+  <link rel="stylesheet" href="grid.css">
 </head>
 <body>
 <div class="container top20">
   <div class="row">
-    <div class="col-12">
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="vertical-center">
+      <div>&nbsp;</div>
+      <div class="form-group">
+        <div class="input-group is-invalid">
+        <input type="email" class="form-control" id="buscador" aria-describedby="emailHelp">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="validatedInputGroupPrepend">Filtrar</span>
+          </div>
         </div>
+        <small id="emailHelp" class="form-text text-muted">Use este campo para filtro</small>
       </div>
+      <div class="col-12 gridLineal" id="contenedor-card">
+      </div>
+      <div id="pagination"></div>
+      <div>&nbsp;</div>
     </div>
   </div>
 </div>
@@ -36,6 +43,104 @@
     crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap.native@3.0.5/dist/bootstrap-native.min.js"
         integrity="sha256-CQiZw1XNLEFM6OEgZ8FR1/nTISQD7Y6i7m3beKI2BfM=" crossorigin="anonymous"></script>
-<script src="data.js"></script>
+<script src="mockData.js"></script>
+<script>
+  const cards = jQuery('#contenedor-card')
+  const paginationHTML = jQuery('#pagination')
+  let layout = false
+  let pagination = {
+    current: 0,
+    last: informacion.length - 1,
+    last_mode: 0,
+    counter: 1
+  }
+  let slider = {
+    limit: informacion.length,
+    current: 1
+  }
+  showCards()
+
+
+  function showCards() {
+    let total = layout ? 6 : 3
+    let limit = layout ? slider.current + total : pagination.current + total
+    cards.empty()
+    for (let i = 0; i < limit; i++) {
+      cards.append(templateCard(informacion[layout ? slider.current + i : pagination.current + i]))
+    }
+    paginationHTML.empty().append(templatePagination())
+  }
+
+  function templateCard(item) {
+    return `<div class="card mb-3" style="max-width: 540px;">
+                 <div class="row no-gutters">
+                     <div class="col-md-4">
+                           <img src="${item.avatar.replace('50x50', '250x250')}" class="card-img-top" alt="avatar del usuario: ${item.first_name}">
+                     </div>
+                     <div class="col-md-8">
+                         <div class="card-body">
+                             <h5 class="card-title">${item.first_name} ${item.last_name}</h5>
+                         </div>
+                         <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Email: ${item.email}</li>
+                            <li class="list-group-item">Genero: ${item.gender === 'Female' ? 'Mujer' : 'Hombre'}</li>
+                            <li class="list-group-item">Idioma: ${item.language}</li>
+                         </ul>
+                     </div>
+                 </div>
+              </div>`
+  }
+
+  function templatePagination(init = 0) {
+    let steps = []
+    let start = init === 0 ? pagination.current : init
+    let end = (start+5) > pagination.last ? pagination.last : start +5
+    for (let i = start; i < (end +1); i++) {
+      steps.push(pagination_step(i))
+    }
+    return `<nav aria-label="...">
+  <ul class="pagination">
+    ${pagination_previous()}
+    ${steps.join('')}
+    ${pagination_next()}
+  </ul>
+</nav>`
+  }
+
+  function pagination_previous () {
+    if (pagination.current === 0) {
+      return `<li class="page-item disabled">
+      <span class="page-link">Previo</span>
+    </li>`
+    }
+    return `<li class="page-item">
+      <span class="page-link">Previo</span>
+    </li>`
+  }
+
+  function pagination_next () {
+    if (pagination.current < pagination.last) {
+      return `<li class="page-item">
+      <span class="page-link">Próximo</span>
+    </li>`
+    }
+    return `<li class="page-item disabled">
+      <span class="page-link">Próximo</span>
+    </li>`
+  }
+
+  function pagination_step(value) {
+   if (value === pagination.current) {
+     return `<li class="page-item active" aria-current="page">
+      <span class="page-link">
+      ${value}
+      <span class="sr-only">(current)</span>
+      </span>
+      </li>`
+   }
+   return `<li class="page-item"><a class="page-link" href="#">${value}</a></li>`
+  }
+
+</script>
 </body>
 </html>

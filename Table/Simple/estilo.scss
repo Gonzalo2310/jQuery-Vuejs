@@ -1,0 +1,49 @@
+.pointer {
+  cursor: pointer;
+}
+
+.top20 {
+  margin-top: 20px;
+}
+
+@keyframes mostrarModal {
+  from {
+    opacity: 0;
+    padding: 0;
+  }
+
+  to {
+    opacity: 1;
+    padding: 20%;
+  }
+}
+
+@keyframes ocultarModal {
+  from {
+    opacity: 1;
+    padding: 20%;
+  }
+
+  to {
+    opacity: 0;
+    padding: 0;
+  }
+}
+
+.showModal {
+  display: block;
+  overflow: inherit;
+  background-color: rgba(239, 202, 189, 0.7);
+  animation-name: mostrarModal;
+  animation-duration: .4s;
+  animation-fill-mode: forwards;
+}
+
+.hideModal {
+  display: block;
+  overflow: inherit;
+  background-color: rgba(239, 202, 189, 0.7);
+  animation-name: ocultarModal;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
