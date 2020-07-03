@@ -1,0 +1,48 @@
+.layout .list .container-list {
+  display: grid;
+  grid-template-rows: 20px auto 5px auto 5px auto auto;
+}
+.layout .list .container-list .elementos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+.layout .list .container-list .elementos .elemento {
+  border: 2px solid #000000;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+.layout .list .container-list .elementos .elemento figure {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+.layout .list .container-list .elementos .elemento figure img {
+  width: 100%;
+  transition: all 1s;
+}
+.layout .list .container-list .elementos .elemento figure figcaption {
+  opacity: 0;
+  position: absolute;
+  padding: 10px;
+  right: 0;
+  left: 0;
+  bottom: 2px;
+  font-weight: bold;
+  background-color: rgba(250, 250, 250, 0.8);
+  transition: all 1s;
+  transition-delay: 300ms;
+  text-align: center;
+}
+.layout .list .container-list .elementos .elemento figure:hover figcaption {
+  opacity: 1;
+}
+.layout .list .container-list .elementos .elemento figure:hover img {
+  opacity: 0.6;
+}
+
+/*# sourceMappingURL=gallery.css.map */
