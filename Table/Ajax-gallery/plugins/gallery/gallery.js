@@ -19,6 +19,9 @@
       console.error('Url es necesario para recoger las imagenes')
       return
     }
+    if (settings.page < 1) {
+      settings.page = 1
+    }
     if (!settings.url.includes(`{${settings.fields.page}`) || !settings.url.includes(`{${settings.fields.limit}`)) {
       console.error(`Son necesarios los parametros ${settings.fields.page} y ${settings.fields.limit} para paginar el resultado. 
       Ejemplo: https://picsum.photos/v2/list?page={${settings.fields.page}}&limit={${settings.fields.limit}}`)
@@ -26,7 +29,6 @@
     }
     if (settings.loading) {
       jQuery('head').append('<link rel="stylesheet" href="./plugins/gallery/gallery.css">')
-      jQuery('body').append('<script src="plugins/modal/modal.js" type="application/javascript"></script>')
       settings.loading = false
     }
 
@@ -43,7 +45,7 @@
       }
     }
 
-    function updateElementos(urlAjax, steps) {
+    function updateElementos(urlAjax, steps, reload = false) {
       let localUrl = urlAjax.replace(`{${settings.fields.page}}`, settings.page).replace(`{${settings.fields.limit}}`, steps)
       jQuery.ajax({
         async: false,
@@ -58,8 +60,7 @@
                 </figure>
              </div>`)
           })
-          settings.page++
-          //localUrl = settings.url.replace(`{${settings.fields.page}}`, settings.page).replace(`{${settings.fields.limit}}`, settings.step)
+          settings.page ++
         }
       })
     }
@@ -75,22 +76,21 @@
           url: jQuery(evt.target).data('full'),
           open: true
         })
-      /*jQuery.getScript("./plugins/modal/modal.js", function() {
-        jQuery('body').imageModal({
-          url: jQuery(evt.target).data('full'),
-          open: true
-        })
-      })*/
       jQuery('#modalClose').on('click', modalClose)
+      jQuery('#buttonClose').on('click', modalClose)
     }
 
     updateElementos(settings.url, settings.first)
+    if (settings.first !== settings.step) {
+      settings.page = Math.floor(settings.first / settings.step) + 1
+    } else {
+      ++settings.page
+    }
 
     this.append(`<div class="layout">
             <div class="list">
               <div class="container-list">
-                 <div>&nbsp;</div>
-                 <div><input></div>
+                
                  <div>&nbsp;</div>
                  <div class="elementos" id="elementos">
                    ${elementos.join('')}
@@ -102,14 +102,17 @@
           </div>
         </div>
 `)
+    jQuery('.imagefull').on('click', modalOpen)
+
     jQuery('#buttonUpload').on('click', function () {
-      ++page
       jQuery('.imagefull').off('click')
       elementos = []
       updateElementos(settings.reload, settings.step)
       jQuery('#elementos').append(elementos.join(''))
       jQuery('.imagefull').on('click', modalOpen)
-      return
+      if (settings.page > 490) {
+        jQuery('#buttonUpload').attr('disabled', 'true')
+      }
     })
   }
 }(jQuery))
