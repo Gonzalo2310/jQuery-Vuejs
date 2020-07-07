@@ -33,7 +33,7 @@
   overflow: inherit;
   background-color: rgba(239, 202, 189, 0.7);
   animation-name: ocultarModal;
-  animation-duration: 0.3s;
+  animation-duration: 0.4s;
   animation-fill-mode: forwards;
 }
 

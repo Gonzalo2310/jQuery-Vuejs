@@ -5,7 +5,7 @@
       reload: '',
       first: 6,
       step: 2,
-      page: 0,
+      page: 1,
       loading: true,
       fields: {
         page: 'page',
@@ -16,14 +16,14 @@
       }
     }, options)
     if (!settings.url) {
-      console.error('Url es necesario para recoger las imagenes')
+      console.error('Url es necesario para recoger las imágenes')
       return
     }
     if (settings.page < 1) {
       settings.page = 1
     }
     if (!settings.url.includes(`{${settings.fields.page}`) || !settings.url.includes(`{${settings.fields.limit}`)) {
-      console.error(`Son necesarios los parametros ${settings.fields.page} y ${settings.fields.limit} para paginar el resultado. 
+      console.error(`Son necesarios los parámetros ${settings.fields.page} y ${settings.fields.limit} para paginar el resultado. 
       Ejemplo: https://picsum.photos/v2/list?page={${settings.fields.page}}&limit={${settings.fields.limit}}`)
       return
     }
@@ -40,9 +40,9 @@
         let final = field.indexOf('}')
         let fieldFind = field.substring(inicio + 1, final)
         return field.substring(0, inicio) + item[fieldFind] + field.substring(final + 1)
-      } else {
-        return item[field]
       }
+        return item[field]
+
     }
 
     function updateElementos(urlAjax, steps, reload = false) {
@@ -90,7 +90,6 @@
     this.append(`<div class="layout">
             <div class="list">
               <div class="container-list">
-                
                  <div>&nbsp;</div>
                  <div class="elementos" id="elementos">
                    ${elementos.join('')}
