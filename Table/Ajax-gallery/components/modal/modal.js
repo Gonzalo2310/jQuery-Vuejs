@@ -10,8 +10,8 @@ Vue.component('modal', {
     url: {
       type: String,
       default: '',
-      validation: (value) => {
-        if (!value) {
+      validator: url => {
+        if (!url) {
           console.error('Url es necesario para mostrar la imagen')
           return false
         }
