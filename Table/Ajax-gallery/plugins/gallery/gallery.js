@@ -22,7 +22,7 @@
     if (settings.page < 1) {
       settings.page = 1
     }
-    if (!settings.url.includes(`{${settings.fields.page}`) || !settings.url.includes(`{${settings.fields.limit}`)) {
+    if (!settings.url.includes(`{${settings.fields.page}}`) || !settings.url.includes(`{${settings.fields.limit}}`)) {
       console.error(`Son necesarios los parámetros ${settings.fields.page} y ${settings.fields.limit} para paginar el resultado. 
       Ejemplo: https://picsum.photos/v2/list?page={${settings.fields.page}}&limit={${settings.fields.limit}}`)
       return
@@ -33,7 +33,6 @@
     }
 
     let elementos = []
-    const me = this
     function process_url_image(item, field) {
       if (field.includes('{')) {
         let inicio = field.indexOf('{')
@@ -45,7 +44,7 @@
 
     }
 
-    function updateElementos(urlAjax, steps, reload = false) {
+    function updateElementos(urlAjax, steps) {
       let localUrl = urlAjax.replace(`{${settings.fields.page}}`, settings.page).replace(`{${settings.fields.limit}}`, steps)
       jQuery.ajax({
         async: false,
