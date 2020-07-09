@@ -9,6 +9,7 @@ Vue.component('modal', {
   props: {
     url: {
       type: String,
+      default: '',
       validation: (value) => {
         if (!value) {
           console.error('Url es necesario para mostrar la imagen')
