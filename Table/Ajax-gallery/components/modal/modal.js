@@ -51,7 +51,6 @@ Vue.component('modal', {
     waitDestroy() {
       const me = this
       setTimeout(()=>{
-        me.status = 2
         me.$emit('close')
       }, 450)
     }
