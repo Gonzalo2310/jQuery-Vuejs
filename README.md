@@ -56,3 +56,17 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo jQuery](Input/filtros/jQueryInputFilter.html)  
   [Codigo Vuejs](Input/filtros/VuejsInputFilter.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form_11.html)  
+  
+#### RadioButton y CheckBox
+![RadioButton y checkbox](imagenes/radiobutton-checkbox.png)  
+
+  Tema: Control de check box y Radio button.
+
+  Vuejs:
+  * v-model con arrays y booleans  
+
+  [Codigo jQuery Radio Button](ControlSimple/radiobutton/jQueryRadioButton.html)  
+  [Codigo Vuejs Radio Button](ControlSimple/radiobutton/VuejsRadioButton.html)  
+  [Codigo jQuery CheckBox](ControlSimple/checkbox/jQueryCheckBox.html)  
+  [Codigo Vuejs CheckBox](ControlSimple/checkbox/VuejsCheckBox.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery_12.html)  
