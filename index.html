@@ -2,17 +2,316 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Indice</title>
+  <title>Indices</title>
+  <style>
+      li {
+          padding-bottom: 10px;
+          font-weight: normal;
+      }
+
+      li.first {
+          padding-top: 10px;
+          border-bottom: 1px dashed #000;
+          font-weight: bold;
+      }
+  </style>
 </head>
 <body>
 <ul>
-  <li><a href="Input/simple/indexInputSimple.html">Input simple</a></li>
-  <li><a href="Input/Errores/indexInputErrors.html">Gestión de errores en Input</a></li>
-  <li><a href="Input/filtros/indexInputFilter.html">Filtros en Input</a></li>
-  <li><a href="ControlSimple/checkbox/indexCheckBox.html">CheckBox</a></li>
-  <li><a href="ControlSimple/radiobutton/indexRadioButton.html">Radio Button</a></li>
-  <li><a href="Button/Clases/indexButtonClass.html">Clases HTML/ CSS dinámico</a></li>
-  <li><a href="Button/Estilos/indexButtonStyle.html">Style HTML / CSS dinámico</a></li>
+  <li class="first">Inicio. Input Simple
+    <ul>
+      <li>
+        JS
+        <ul>
+          <li>Evento Input</li>
+        </ul>
+      </li>
+      <li>
+        Vuejs
+        <ul>
+          <li>Uso de {{}}</li>
+          <li>v-model</li>
+          <li>Instancia de Vue</li>
+          <li>Significado de "el" en la Instancia</li>
+          <li>¿Porque id="app"?</li>
+          <li>data: Los variables en Vuejs</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a target="_blank" href="Input/simple/indexInputSimple.html">Codigo</a></li>
+      <li><a target="_blank"
+             href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form.html">Articulo</a>
+      </li>
+    </ul>
+  </li>
+  <li class="first">Gestión de errores en Input
+    <ul>
+      <li>
+        JS
+        <ul>
+          <li>If ternario</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        Vuejs
+        <ul>
+          <li>:class</li>
+          <li>@ y eventos</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="Input/Errores/indexInputErrors.html">Codigo</a></li>
+      <li><a href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form_9.html">Articulo</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="first">Filtros en Input
+    <ul>
+      <li>
+        Vuejs
+        <ul>
+          <li>THIS</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="Input/filtros/indexInputFilter.html">Codigo</a></li>
+      <li><a href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form_11.html">Articulo</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="first">CheckBox y Radio Button
+    <ul>
+      <li>
+        Vuejs
+        <ul>
+          <li>v-model con arrays y booleans</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="ControlSimple/checkbox/indexCheckBox.html">Codigo CheckBox</a></li>
+      <li><a href="ControlSimple/radiobutton/indexRadioButton.html">Codigo Radiobutton</a></li>
+      <li><a
+          href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery_12.html">Articulo</a>
+      </li>
+    </ul>
+  </li>
+  <li class="first">Style inline y Clases CSS
+    <ul>
+      <li>
+        Vuejs
+        <ul>
+          <li>@click</li>
+          <li>:style</li>
+          <li>v-if</li>
+          <li>v-else</li>
+          <li>Virtual DOM</li>
+          <li>Computadas</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="Button/Estilos/indexButtonStyle.html">Codigo Style inline</a></li>
+      <li><a href="Button/Clases/indexButtonClass.html">Codigo Clases CSS</a></li>
+      <li><a href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-clases.html">Articulo</a>
+      </li>
+    </ul>
+  </li>
+  <li class="first">Tabulaciones
+    <ul>
+      <li>
+        jQuery
+        <ul>
+          <li>Eventos (evt)</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>Vuejs
+        <ul>
+          <li>
+            v-show
+          </li>
+          <li>
+            v-for
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="Navs/tabulacion/indexTabulacion.html">Codigo</a></li>
+      <li><a
+          href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery_16.html">Articulo</a>
+      </li>
+    </ul>
+  </li>
+    <li class="first">Select Simple
+      <ul>
+        <li>Vuejs
+          <ul>
+            <li>v-model en select</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="Select/Simple/indexSelectSimple.html">Codigo</a></li>
+        <li><a
+            href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-select.html">Articulo</a>
+        </li>
+      </ul>
+    </li>
+    <li class="first">Select relacionados
+      <ul>
+        <li>JS
+          <ul>
+            <li>Importacion de variables externas</li>
+            <li>Funcionamiento de &lt;script&gt;</li>
+            <li>every()</li>
+            <li>Notacion arrow</li>
+            <li>join()</li>
+            <li>find()</li>
+            <li>if inutiles / else innecesarios</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>jQuery
+          <ul>
+            <li>Funciones template</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>Vuejs
+          <ul>
+            <li>watch</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="Select/Relacionados/indexSelectRelacionados.html">Codigo</a></li>
+        <li><a
+            href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects.html">Articulo</a>
+        </li>
+      </ul>
+    </li>
+  <li class="first">Select y filtros
+    <ul>
+      <li>JS
+        <ul>
+          <li>Desestructuración</li>
+          <li>Plantillas de cadenas de texto(${})</li>
+          <li>filter()</li>
+          <li>includes()</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="Select/Filtro/indexSelectFiltro.html">Codigo</a></li>
+      <li><a
+          href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_19.html">Articulo</a>
+      </li>
+    </ul>
+  </li>
+  <li class="first">Select Dinamicos y componentes
+    <ul>
+      <li>JS
+        <ul>
+          <li>Copias por referencias(array y objetos)</li>
+          <li>findIndex()</li>
+          <li>splice()</li>
+          <li>incremento(++pre y post++ )</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>Vuejs
+        <ul>
+          <li>Componentes(explicación, concepto, creación)</li>
+          <li>$emit</li>
+          <li>Eventos propios</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="Select/Dinamico/indexSelectDinamico.html">Codigo</a></li>
+      <li><a
+          href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_22.html">Articulo</a>
+      </li>
+    </ul>
+  </li>
+  <li class="first">Una mini y sencilla hoja de cálculo
+  <ul>
+    <li><a href="Select/Spread%20Sheet/indexSpreadSheet.html">Codigo</a></li>
+    <li><a
+        href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-una.html">Articulo</a>
+    </li>
+  </ul>
+  </li>
+  <li class="first"> Galeria de imagenes
+  <ul>
+    <li>CSS
+    <ul>
+      <li>@keyframe</li>
+    </ul>
+    </li>
+    <li>JS
+    <ul>
+      <li>setTimeout()</li>
+    </ul>
+    </li>
+    <li>
+      Vuejs
+      <ul>
+        <li>Ciclo de vida de un componente</li>
+      </ul>
+    </li>
+  </ul>
+    <ul>
+      <li><a href="Imagenes/Galeria/indexGaleriaImagenes.html">Codigo</a></li>
+      <li><a href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-galeria.html">Articulo</a></li>
+    </ul>
+  </li>
+  <li class="first">Seleccion multiple. Menús
+  <ul>
+    <li>Vuejs
+    <ul>
+      <li>Transition</li>
+    </ul>
+    </li>
+  </ul>
+    <ul>
+      <li><a href="Select/Multiple/indexSelectMultiple.html">Codigo Seleccion Multiple</a></li>
+      <li><a href="Navs/Menus/indexNavBarMenu.html">Codigo Menús</a></li>
+      <li><a href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-select_25.html">Articulo</a></li>
+    </ul>
+  </li>
+  <li class="first">Tabla simple y paginacion
+  <ul>
+    <li>JS
+    <ul>
+      <li>Array.From</li>
+    </ul>
+    </li>
+    <li>Vuejs
+    <ul>
+      <li>v-html</li>
+    </ul>
+    </li>
+  </ul>
+    <ul>
+      <li><a href="Table/Simple/indexTableSimple.html">Codigo</a></li>
+      <li><a href="https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-tablas.html">Articulo</a></li>
+    </ul>
+  </li>
 </ul>
 </body>
 </html>
+
