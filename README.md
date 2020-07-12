@@ -91,7 +91,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs Class CSS](Button/Clases/VuejsButtonClass.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-clases.html)  
 
-  ### Tabuladores
+### Tabuladores
   ![Tabulaciones](imagenes/tabulacion.gif)
 
   Tema: Un sistema simple de tabs para diferente contenido
@@ -106,7 +106,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Navs/tabulacion/VuejsTabulacion.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery_16.html)  
 
-  ### Select Simple
+### Select Simple
   ![Select](imagenes/Select.gif)  
   Tema: Sistema simple de Select.
 
@@ -117,7 +117,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Select/Simple/VuejsSelectSimple.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-select.html)  
 
-  ### Select relacionados
+### Select relacionados
   ![Select relacionados](imagenes/Select-relacionados.gif)
 
   Tema: control de contenido son selects relacionados entre si.
@@ -139,7 +139,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Select/Relacionados/VuejsSelectRelacionados.html)  
   [Articulos](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects.html)  
 
-  ### Filtros en Selects
+### Filtros en Selects
   ![Filtros](imagenes/select-filtro.gif)  
   Temas: Filtrar el contenido de un Select
   JS: 
@@ -152,7 +152,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Select/Filtro/VuejsSelectFiltro.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_19.html)  
 
-  ### Select dinamicos y componentes
+### Select dinamicos y componentes
   ![Select dinamicos](imagenes/dinamico.gif)  
   Tema: Select con contenidos dinamicos y creacion del primer componente.
   JS:
@@ -169,7 +169,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Select/Dinamico/VuejsSelectDinamico.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_22.html)  
 
-  ### Sencilla hoja de calculo
+### Sencilla hoja de calculo
   ![Hoja de calculo](imagenes/spreadsheet.gif)  
   Temas: Sencilla logica del funcionamiento de una hoja de calculo.
 
@@ -177,4 +177,19 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Select/Spread%20Sheet/VuejsSpreadSheet.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-una.html)  
 
+### Galería de imágenes
+  ![galeria](imagenes/galeria.gif)
+  
+  Temas: Una galeria de imagenes sencilla.
+  CSS:
+  * @keyframe 
+  JS:
+  * setTimeout() 
+  VueJS:
+  * Ciclo de vida de un componente.
+
+  [Codigo jQuery](Imagenes/Galeria/jQueryGaleriaImagenes.html)  
+  [Codigo Vuejs](Imagenes/Galeria/VuejsGaleriaImagenes.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-galeria.html)  
+  
   
