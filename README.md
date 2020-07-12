@@ -10,3 +10,27 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 * Inicio
 
   ![ezgif-5-276a89381332](imagenes/ezgif-5-276a89381332.gif)
+  
+  Tema: Reactividad de la forma mas sencilla. 
+  
+  Vuejs: 
+  
+  * Uso de {{}}
+  
+  * v-model. 
+  
+  * Instancia vue. 
+  
+  * Significado de "el". 
+  
+  *  ¿Por qué  id="app"?. 
+  
+  * Los datos en la instancia de Vuejs (data). 
+  
+  JS:
+  
+  * Evento input.
+
+[Codigo jQuery](Input/simple/jQueryInputSimple.html)
+[Codigo Vuejs](Input/simple/VuejsInputSimple.html)
+[Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form.html)
