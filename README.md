@@ -31,6 +31,6 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   
   * Evento input.
 
-  [Codigo jQuery](Input/simple/jQueryInputSimple.html)
-  [Codigo Vuejs](Input/simple/VuejsInputSimple.html)
-  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form.html)
+  [Codigo jQuery](Input/simple/jQueryInputSimple.html)  
+  [Codigo Vuejs](Input/simple/VuejsInputSimple.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form.html)  
