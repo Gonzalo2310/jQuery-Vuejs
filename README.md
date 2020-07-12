@@ -200,10 +200,10 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   Vuejs:
   * Transition
   
-  [Codigo jQuery Seleccion Multiple](Select/Multiple/jQuerySelectMultiple.html)
-  [Codigo Vuejs Seleccion Multiple](Select/Multiple/VuejsSelectMultiple.html)
-  [Codigo jQuery Menus](Navs/Menus/jQueryNavBarMenu.html)
-  [Codigo Vuejs Menus](Navs/Menus/VuejsNavBarMenu.html)
-  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-select_25.html)
+  [Codigo jQuery Seleccion Multiple](Select/Multiple/jQuerySelectMultiple.html)  
+  [Codigo Vuejs Seleccion Multiple](Select/Multiple/VuejsSelectMultiple.html)  
+  [Codigo jQuery Menus](Navs/Menus/jQueryNavBarMenu.html)  
+  [Codigo Vuejs Menus](Navs/Menus/VuejsNavBarMenu.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-select_25.html)  
   
   
