@@ -45,4 +45,14 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Input/Errores/VuejsInputErrors.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form_9.html)  
 
-  
+#### Filtro de contenido
+![control de filtro](imagenes/input-filtro.png)
+
+  Tema: Gestión sencilla de filtro de contenido en un input.
+
+  Vuejs:  
+  * THIS  
+
+  [Codigo jQuery](Input/filtros/jQueryInputFilter.html)  
+  [Codigo Vuejs](Input/filtros/VuejsInputFilter.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form_11.html)  
