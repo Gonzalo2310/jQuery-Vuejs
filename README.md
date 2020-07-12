@@ -90,41 +90,41 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo jQuery Clases CSS](Button/Clases/jQueryButtonClass.html)  
   [Codigo Vuejs Class CSS](Button/Clases/VuejsButtonClass.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-clases.html)  
-  
+
   ### Tabuladores
   ![Tabulaciones](imagenes/tabulacion.gif)
-  
+
   Tema: Un sistema simple de tabs para diferente contenido
-  
+
   Vuejs:
   * v-show
   * v-for
-  jQuery:
+    jQuery:
   * Eventos (evt)
 
   [Codigo jQuery](Navs/tabulacion/jQueryTabulacion.html)  
   [Codigo Vuejs](Navs/tabulacion/VuejsTabulacion.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery_16.html)  
-  
+
   ### Select Simple
   ![Select](imagenes/Select.gif)  
   Tema: Sistema simple de Select.
-  
+
   Vuejs: 
   * v-model en select.
-  
+
   [Codigo jQuery](Select/Simple/jQuerySelectSimple.html)  
   [Codigo Vuejs](Select/Simple/VuejsSelectSimple.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-select.html)  
-  
+
   ### Select relacionados
   ![Select relacionados](imagenes/Select-relacionados.gif)
-  
+
   Tema: control de contenido son selects relacionados entre si.
-  
+
   Vuejs:
   * watch
-  JS:
+    JS:
   * Importacion de constante externa
   * Funcionamiento de < script >
   * every()
@@ -132,13 +132,13 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   * Join()
   * find()
   * if y else innecesarios
-  jQuery:
+    jQuery:
   * Funciones templates
-  
+
   [Codigo jQuery](Select/Relacionados/jQuerySelectRelacionados.html)  
   [Codigo Vuejs](Select/Relacionados/VuejsSelectRelacionados.html)  
   [Articulos](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects.html)  
-  
+
   ### Filtros en Selects
   ![Filtros](imagenes/select-filtro.gif)  
   Temas: Filtrar el contenido de un Select
@@ -147,11 +147,11 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   * Plantillas de cadenas de texto ${}
   * filter()
   * includes()
-  
+
   [Codigo jQuery](Select/Filtro/jQuerySelectFiltro.html)  
   [Codigo Vuejs](Select/Filtro/VuejsSelectFiltro.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_19.html)  
-  
+
   ### Select dinamicos y componentes
   ![Select dinamicos](imagenes/dinamico.gif)  
   Tema: Select con contenidos dinamicos y creacion del primer componente.
@@ -160,22 +160,21 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   * findIndex()
   * splice()
   * incremento (++pre y post++)
-  Vuejs:
+    Vuejs:
   * Componentes (expicacion, concepto, creacion)
   * $emit
   * Eventos propios
-  
+
   [Codigo jQuery](Select/Dinamico/jQuerySelectDinamico.html)  
   [Codigo Vuejs](Select/Dinamico/VuejsSelectDinamico.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_22.html)  
-  
+
   ### Sencilla hoja de calculo
   ![Hoja de calculo](imagenes/spreadsheet.gif)  
   Temas: Sencilla logica del funcionamiento de una hoja de calculo.
-  
-  [Codigo jQuery](Select/Spread Sheet/jQuerySpreadSheet.html)  
-  [Codigo Vuejs](Select/Spread Sheet/VuejsSpreadSheet.html)  
+
+  [Codigo jQuery](Select/Spread%20Sheet/jQuerySpreadSheet.html)  
+  [Codigo Vuejs](Select/Spread%20Sheet/VuejsSpreadSheet.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-una.html)  
-  
-  
+
   
