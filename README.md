@@ -192,4 +192,18 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Imagenes/Galeria/VuejsGaleriaImagenes.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-galeria.html)  
   
+### Selección múltiple. Menús
+  ![Menus](imagenes/menu.gif)  
+  ![Seleccion multiple](imagenes/multiple.gif)  
+  Temas: Select con seleccion multiple y menu de opciones.
+  
+  Vuejs:
+  * Transition
+  
+  [Codigo jQuery Seleccion Multiple](Select/Multiple/jQuerySelectMultiple.html)
+  [Codigo Vuejs Seleccion Multiple](Select/Multiple/VuejsSelectMultiple.html)
+  [Codigo jQuery Menus](Navs/Menus/jQueryNavBarMenu.html)
+  [Codigo Vuejs Menus](Navs/Menus/VuejsNavBarMenu.html)
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-select_25.html)
+  
   
