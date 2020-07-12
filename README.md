@@ -73,7 +73,8 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
 ### Estilos Inline y Clases CSS
 ![Estilos inline](imagenes/buttonClass.gif)  
-![Clases CSS](imagenes/clasescss.gif)
+![Clases CSS](imagenes/clasescss.gif)  
+
   Tema: Style Inlne y clases Css
 
   Vuejs: 
@@ -106,7 +107,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery_16.html)  
   
   ### Select Simple
-  ![Select](imagenes/Select.gif)
+  ![Select](imagenes/Select.gif)  
   Tema: Sistema simple de Select.
   
   Vuejs: 
@@ -139,7 +140,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Articulos](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects.html)  
   
   ### Filtros en Selects
-  ![Filtros](imagenes/select-filtro.gif)
+  ![Filtros](imagenes/select-filtro.gif)  
   Temas: Filtrar el contenido de un Select
   JS: 
   * Desestructuracion
@@ -152,7 +153,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_19.html)  
   
   ### Select dinamicos y componentes
-  ![Select dinamicos](imagenes/dinamico.gif)
+  ![Select dinamicos](imagenes/dinamico.gif)  
   Tema: Select con contenidos dinamicos y creacion del primer componente.
   JS:
   * Copias por referencias (arrays, objectos)
@@ -169,7 +170,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_22.html)  
   
   ### Sencilla hoja de calculo
-  ![Hoja de calculo](imagenes/spreadsheet.gif)
+  ![Hoja de calculo](imagenes/spreadsheet.gif)  
   Temas: Sencilla logica del funcionamiento de una hoja de calculo.
   
   [Codigo jQuery](Select/Spread Sheet/jQuerySpreadSheet.html)  
