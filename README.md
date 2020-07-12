@@ -152,7 +152,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_19.html)  
   
   ### Select dinamicos y componentes
-  ![Select dinamicos](imagenes/dinamico.png)
+  ![Select dinamicos](imagenes/dinamico.gif)
   Tema: Select con contenidos dinamicos y creacion del primer componente.
   JS:
   * Copias por referencias (arrays, objectos)
