@@ -105,4 +105,37 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Navs/tabulacion/VuejsTabulacion.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery_16.html)  
   
+  ### Select Simple
+  ![Select](imagenes/Select.gif)
+  Tema: Sistema simple de Select.
+  
+  Vuejs: 
+  * v-model en select.
+  
+  [Codigo jQuery](Select/Simple/jQuerySelectSimple.html)  
+  [Codigo Vuejs](Select/Simple/VuejsSelectSimple.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-select.html)  
+  
+  ### Select relacionados
+  ![Select relacionados](imagenes/Select-relacionados.gif)
+  
+  Tema: control de contenido son selects relacionados entre si.
+  
+  Vuejs:
+  * watch
+  JS:
+  * Importacion de constante externa
+  * Funcionamiento de < script >
+  * every()
+  * Notacion Arrow
+  * Join()
+  * find()
+  * if y else innecesarios
+  jQuery:
+  * Funciones templates
+  
+  [Codigo jQuery](Select/Relacionados/jQuerySelectRelacionados.html)  
+  [Codigo Vuejs](Select/Relacionados/VuejsSelectRelacionados.html)  
+  [Articulos](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects.html)  
+  
   
