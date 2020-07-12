@@ -138,4 +138,43 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Select/Relacionados/VuejsSelectRelacionados.html)  
   [Articulos](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects.html)  
   
+  ### Filtros en Selects
+  ![Filtros](imagenes/select-filtro.gif)
+  Temas: Filtrar el contenido de un Select
+  JS: 
+  * Desestructuracion
+  * Plantillas de cadenas de texto ${}
+  * filter()
+  * includes()
+  
+  [Codigo jQuery](Select/Filtro/jQuerySelectFiltro.html)  
+  [Codigo Vuejs](Select/Filtro/VuejsSelectFiltro.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_19.html)  
+  
+  ### Select dinamicos y componentes
+  ![Select dinamicos](imagenes/dinamico.png)
+  Tema: Select con contenidos dinamicos y creacion del primer componente.
+  JS:
+  * Copias por referencias (arrays, objectos)
+  * findIndex()
+  * splice()
+  * incremento (++pre y post++)
+  Vuejs:
+  * Componentes (expicacion, concepto, creacion)
+  * $emit
+  * Eventos propios
+  
+  [Codigo jQuery](Select/Dinamico/jQuerySelectDinamico.html)  
+  [Codigo Vuejs](Select/Dinamico/VuejsSelectDinamico.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-selects_22.html)  
+  
+  ### Sencilla hoja de calculo
+  ![Hoja de calculo](imagenes/spreadsheet.gif)
+  Temas: Sencilla logica del funcionamiento de una hoja de calculo.
+  
+  [Codigo jQuery](Select/Spread Sheet/jQuerySpreadSheet.html)  
+  [Codigo Vuejs](Select/Spread Sheet/VuejsSpreadSheet.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-una.html)  
+  
+  
   
