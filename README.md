@@ -7,7 +7,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
 ## Indice
 
-#### Inicio.  Input Simple.
+### Inicio.  Input Simple.
   ![ezgif-5-276a89381332](imagenes/ezgif-5-276a89381332.gif)
 
   Tema: Reactividad de la forma mas sencilla. 
@@ -27,7 +27,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Input/simple/VuejsInputSimple.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form.html)  
 
-#### Control de errores.
+### Control de errores.
   ![error de input](imagenes/gestion-error.png)
 
   Tema: Gestión de errores en un input simple
@@ -45,7 +45,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo Vuejs](Input/Errores/VuejsInputErrors.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form_9.html)  
 
-#### Filtro de contenido
+### Filtro de contenido
 ![control de filtro](imagenes/input-filtro.png)
 
   Tema: Gestión sencilla de filtro de contenido en un input.
@@ -56,8 +56,8 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo jQuery](Input/filtros/jQueryInputFilter.html)  
   [Codigo Vuejs](Input/filtros/VuejsInputFilter.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form_11.html)  
-  
-#### RadioButton y CheckBox
+
+### RadioButton y CheckBox
 ![RadioButton y checkbox](imagenes/radiobutton-checkbox.png)  
 
   Tema: Control de check box y Radio button.
@@ -70,3 +70,22 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo jQuery CheckBox](ControlSimple/checkbox/jQueryCheckBox.html)  
   [Codigo Vuejs CheckBox](ControlSimple/checkbox/VuejsCheckBox.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery_12.html)  
+
+### Estilos Inline y Clases CSS
+![Estilos inline](imagenes/buttonClass.gif)  
+![Clases CSS](imagenes/clasescss.gif)
+  Tema: Style Inlne y clases Css
+
+  Vuejs: 
+  * @click
+  * :style
+  * v-if
+  * v-else
+  * Virtual DOM
+  * Computadas  
+
+  [Codigo jQuery Estilos inline](Button/Estilos/jQueryButtonStyle.html)  
+  [Codigo Vuejs Estilos inline](Button/Estilos/VuejsButtonStyle.html)  
+  [Codigo jQuery Clases CSS](Button/Clases/jQueryButtonClass.html)  
+  [Codigo Vuejs Class CSS](Button/Clases/VuejsButtonClass.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-clases.html)  
