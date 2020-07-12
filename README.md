@@ -5,13 +5,13 @@ Proyecto que pretende ayudar a los programadores de jQuery a entender y aplicar 
 
 Se presentan diferentes soluciones de complejidad ascendente y a medida que se avanza se muestra como realizarlo en jQuery y en Vuejs. Hay articulo por cada proyecto.
 
-#### Indice
+## Indice
 
-* Inicio.  Input Simple.
+#### Inicio.  Input Simple.
   ![ezgif-5-276a89381332](imagenes/ezgif-5-276a89381332.gif)
-  
+
   Tema: Reactividad de la forma mas sencilla. 
-  
+
   Vuejs: 
   * Uso de {{}}  
   * v-model.   
@@ -19,10 +19,30 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   * Significado de "el".  
   *  ¿Por qué  id="app"?.  
   * Los datos en la instancia de Vuejs (data).  
-  
+
   JS:  
   * Evento input.  
 
   [Codigo jQuery](Input/simple/jQueryInputSimple.html)  
   [Codigo Vuejs](Input/simple/VuejsInputSimple.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form.html)  
+
+#### Control de errores.
+  ![error de input](imagenes/gestion-error.png)
+
+  Tema: Gestión de errores en un input simple
+
+  JS:  
+  * if ternario  
+
+  Vuejs:  
+  * :class  
+  
+  * @ para los eventos en vuejs. 
+
+
+  [Codigo jQuery](Input/Errores/jQueryInputErrors.html)  
+  [Codigo Vuejs](Input/Errores/VuejsInputErrors.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form_9.html)  
+
+  
