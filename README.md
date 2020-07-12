@@ -179,31 +179,44 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
 ### Galería de imágenes
   ![galeria](imagenes/galeria.gif)
-  
+
   Temas: Una galeria de imagenes sencilla.
   CSS:
   * @keyframe 
-  JS:
+    JS:
   * setTimeout() 
-  VueJS:
+    VueJS:
   * Ciclo de vida de un componente.
 
   [Codigo jQuery](Imagenes/Galeria/jQueryGaleriaImagenes.html)  
   [Codigo Vuejs](Imagenes/Galeria/VuejsGaleriaImagenes.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-galeria.html)  
-  
+
 ### Selección múltiple. Menús
   ![Menus](imagenes/menu.gif)  
   ![Seleccion multiple](imagenes/multiple.gif)  
   Temas: Select con seleccion multiple y menu de opciones.
-  
+
   Vuejs:
   * Transition
-  
+
   [Codigo jQuery Seleccion Multiple](Select/Multiple/jQuerySelectMultiple.html)  
   [Codigo Vuejs Seleccion Multiple](Select/Multiple/VuejsSelectMultiple.html)  
   [Codigo jQuery Menus](Navs/Menus/jQueryNavBarMenu.html)  
   [Codigo Vuejs Menus](Navs/Menus/VuejsNavBarMenu.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-select_25.html)  
+
+### Tabla simple y paginación
+  ![Tabla](imagenes/tablesimple.gif)
+
+  Tema: Tabla de informacion, modal para expandir datos y paginacion.
+
+  JS: 
+  * Array.From  
   
-  
+  Vuejs:
+  * v-html  
+
+  [Codigo jQuery](Table/Simple/jQueryTableSimple.html)  
+  [Codigo Vuejs](Table/Simple/VuejsTableSimple.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-tablas.html)  
