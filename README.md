@@ -89,3 +89,20 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Codigo jQuery Clases CSS](Button/Clases/jQueryButtonClass.html)  
   [Codigo Vuejs Class CSS](Button/Clases/VuejsButtonClass.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-clases.html)  
+  
+  ### Tabuladores
+  ![Tabulaciones](imagenes/tabulacion.gif)
+  
+  Tema: Un sistema simple de tabs para diferente contenido
+  
+  Vuejs:
+  * v-show
+  * v-for
+  jQuery:
+  * Eventos (evt)
+
+  [Codigo jQuery](Navs/tabulacion/jQueryTabulacion.html)  
+  [Codigo Vuejs](Navs/tabulacion/VuejsTabulacion.html)  
+  [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery_16.html)  
+  
+  
