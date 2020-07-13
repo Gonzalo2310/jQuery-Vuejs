@@ -18,7 +18,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   * Significado de "el".  
   *  ¿Por qué  id="app"?.  
   * Los datos en la instancia de Vuejs (data).  
-  JS:  
+    JS:  
   * Evento input.  
 
   [Codigo jQuery](Input/simple/jQueryInputSimple.html)  
@@ -32,7 +32,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
   JS:  
   * if ternario  
-  Vuejs:  
+    Vuejs:  
   * :class  
   * @ para los eventos en vuejs. 
 
@@ -120,11 +120,11 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
   Vuejs:
   * watch
-  JS:
-  * Importacion de constante externa
+    JS:
+  * Importación de constante externa
   * Funcionamiento de < script >
   * every()
-  * Notacion Arrow
+  * Notación Arrow
   * Join()
   * find()
   * if y else innecesarios
@@ -139,9 +139,9 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 ### Filtros en Selects
   ![Filtros](imagenes/select-filtro.gif)  
   Temas: Filtrar el contenido de un Select  
-  
+
   JS: 
-  * Desestructuracion
+  * Desestructuración
   * Plantillas de cadenas de texto ${}
   * filter()
   * includes()
@@ -152,15 +152,16 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
 ### Select dinamicos y componentes
   ![Select dinamicos](imagenes/dinamico.gif)  
-  Tema: Select con contenidos dinamicos y creacion del primer componente.
+  Tema: Select con contenidos dinámicos y creación del primer componente.
   JS:
+
   * Copias por referencias (arrays, objectos)
   * findIndex()
   * splice()
   * incremento (++pre y post++)  
 
   Vuejs:
-  * Componentes (expicacion, concepto, creacion)
+  * Componentes (explicación, concepto, creación)
   * $emit
   * Eventos propios
 
@@ -170,7 +171,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
 ### Sencilla hoja de calculo
   ![Hoja de calculo](imagenes/spreadsheet.gif)  
-  Temas: Sencilla logica del funcionamiento de una hoja de calculo.
+  Temas: Sencilla lógica del funcionamiento de una hoja de calculo.
 
   [Codigo jQuery](Select/Spread%20Sheet/jQuerySpreadSheet.html)  
   [Codigo Vuejs](Select/Spread%20Sheet/VuejsSpreadSheet.html)  
@@ -179,13 +180,14 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 ### Galería de imágenes
   ![galeria](imagenes/galeria.gif)
 
-  Temas: Una galeria de imagenes sencilla.
+  Temas: Una galería de imágenes sencilla.
   CSS:
+
   * @keyframe 
 
   JS:
   * setTimeout() 
-  
+
   VueJS:
   * Ciclo de vida de un componente.
 
@@ -196,7 +198,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 ### Selección múltiple. Menús
   ![Menus](imagenes/menu.gif)  
   ![Seleccion multiple](imagenes/multiple.gif)  
-  Temas: Select con seleccion multiple y menu de opciones.
+  Temas: Select con selección múltiple y menú de opciones.
 
   Vuejs:
   * Transition
@@ -210,11 +212,11 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 ### Tabla simple y paginación
   ![Tabla](imagenes/tablesimple.gif)
 
-  Tema: Tabla de informacion, modal para expandir datos y paginacion.
+  Tema: Tabla de información, modal para expandir datos y paginación.
 
   JS: 
   * Array.From  
-  
+
   Vuejs:
   * v-html  
 
