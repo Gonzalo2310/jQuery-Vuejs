@@ -9,7 +9,6 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
 ### Inicio.  Input Simple.
   ![ezgif-5-276a89381332](imagenes/ezgif-5-276a89381332.gif)
-
   Tema: Reactividad de la forma mas sencilla. 
 
   Vuejs: 
@@ -19,7 +18,6 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   * Significado de "el".  
   *  ¿Por qué  id="app"?.  
   * Los datos en la instancia de Vuejs (data).  
-
   JS:  
   * Evento input.  
 
@@ -34,19 +32,16 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
   JS:  
   * if ternario  
-
   Vuejs:  
   * :class  
-  
   * @ para los eventos en vuejs. 
-
 
   [Codigo jQuery](Input/Errores/jQueryInputErrors.html)  
   [Codigo Vuejs](Input/Errores/VuejsInputErrors.html)  
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form_9.html)  
 
 ### Filtro de contenido
-![control de filtro](imagenes/input-filtro.png)
+  ![control de filtro](imagenes/input-filtro.png)
 
   Tema: Gestión sencilla de filtro de contenido en un input.
 
@@ -58,7 +53,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery-form_11.html)  
 
 ### RadioButton y CheckBox
-![RadioButton y checkbox](imagenes/radiobutton-checkbox.png)  
+  ![RadioButton y checkbox](imagenes/radiobutton-checkbox.png)  
 
   Tema: Control de check box y Radio button.
 
@@ -72,8 +67,8 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   [Articulo](https://comunidad.programaresunamierda.com/2020/06/vuejs-para-programadores-jquery_12.html)  
 
 ### Estilos Inline y Clases CSS
-![Estilos inline](imagenes/buttonClass.gif)  
-![Clases CSS](imagenes/clasescss.gif)  
+  ![Estilos inline](imagenes/buttonClass.gif)  
+  ![Clases CSS](imagenes/clasescss.gif)  
 
   Tema: Style Inlne y clases Css
 
@@ -99,7 +94,8 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   Vuejs:
   * v-show
   * v-for
-    jQuery:
+
+  jQuery:
   * Eventos (evt)
 
   [Codigo jQuery](Navs/tabulacion/jQueryTabulacion.html)  
@@ -124,7 +120,7 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
   Vuejs:
   * watch
-    JS:
+  JS:
   * Importacion de constante externa
   * Funcionamiento de < script >
   * every()
@@ -132,7 +128,8 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   * Join()
   * find()
   * if y else innecesarios
-    jQuery:
+
+  jQuery:
   * Funciones templates
 
   [Codigo jQuery](Select/Relacionados/jQuerySelectRelacionados.html)  
@@ -141,7 +138,8 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
 
 ### Filtros en Selects
   ![Filtros](imagenes/select-filtro.gif)  
-  Temas: Filtrar el contenido de un Select
+  Temas: Filtrar el contenido de un Select  
+  
   JS: 
   * Desestructuracion
   * Plantillas de cadenas de texto ${}
@@ -159,8 +157,9 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   * Copias por referencias (arrays, objectos)
   * findIndex()
   * splice()
-  * incremento (++pre y post++)
-    Vuejs:
+  * incremento (++pre y post++)  
+
+  Vuejs:
   * Componentes (expicacion, concepto, creacion)
   * $emit
   * Eventos propios
@@ -183,9 +182,11 @@ Se presentan diferentes soluciones de complejidad ascendente y a medida que se a
   Temas: Una galeria de imagenes sencilla.
   CSS:
   * @keyframe 
-    JS:
+
+  JS:
   * setTimeout() 
-    VueJS:
+  
+  VueJS:
   * Ciclo de vida de un componente.
 
   [Codigo jQuery](Imagenes/Galeria/jQueryGaleriaImagenes.html)  
